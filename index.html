@@ -16,8 +16,8 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="vendor/morphany3d/fonts/regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="vendor/morphany3d/fonts/bold.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=hero-v7">
-  <script src="script.js?v=hero-loop-1" defer></script>
+  <link rel="stylesheet" href="styles.css?v=hero-four-v10">
+  <script src="script.js?v=hero-four-v10" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -34,40 +34,38 @@
     <section class="case-showcase container" id="showcase" aria-label="Generation examples" aria-roledescription="carousel" tabindex="0">
       <div class="case-stage">
         <div class="case-viewport" id="case-slides">
-          <article class="case-slide" id="case-01" role="group" aria-roledescription="slide" aria-label="Case 01, 1 of 3">
-            <video data-src="assets/videos/SpectralWeave_02_HHHA.mp4" controls muted loop playsinline preload="none" aria-label="Case 01 animation" hidden></video>
+          <article class="case-slide" id="case-01" role="group" aria-roledescription="slide" aria-label="Case 01, 1 of 4">
+            <video data-src="assets/videos/SpectralWeave_01_HHH.mp4" controls muted loop playsinline preload="none" aria-label="Case 01 animation" hidden></video>
             <div class="case-placeholder"><span class="case-watermark" aria-hidden="true">01</span><span class="case-label">Case 01</span><p>Video coming soon</p></div>
           </article>
-          <article class="case-slide" id="case-02" role="group" aria-roledescription="slide" aria-label="Case 02, 2 of 3" aria-hidden="true" inert hidden>
-            <video data-src="assets/videos/SpectralWeave_01_HHHA.mp4" controls muted loop playsinline preload="none" aria-label="Case 02 animation" hidden></video>
+          <article class="case-slide" id="case-02" role="group" aria-roledescription="slide" aria-label="Case 02, 2 of 4" aria-hidden="true" inert hidden>
+            <video data-src="assets/videos/SpectralWeave_02_HHH.mp4" controls muted loop playsinline preload="none" aria-label="Case 02 animation" hidden></video>
             <div class="case-placeholder"><span class="case-watermark" aria-hidden="true">02</span><span class="case-label">Case 02</span><p>Video coming soon</p></div>
           </article>
-          <article class="case-slide" id="case-03" role="group" aria-roledescription="slide" aria-label="Case 03, 3 of 3" aria-hidden="true" inert hidden>
-            <video data-src="assets/videos/SpectralWeave_03_HHAA.mp4" controls muted loop playsinline preload="none" aria-label="Case 03 animation" hidden></video>
+          <article class="case-slide" id="case-03" role="group" aria-roledescription="slide" aria-label="Case 03, 3 of 4" aria-hidden="true" inert hidden>
+            <video data-src="assets/videos/SpectralWeave_03_AAA.mp4" controls muted loop playsinline preload="none" aria-label="Case 03 animation" hidden></video>
             <div class="case-placeholder"><span class="case-watermark" aria-hidden="true">03</span><span class="case-label">Case 03</span><p>Video coming soon</p></div>
+          </article>
+          <article class="case-slide" id="case-04" role="group" aria-roledescription="slide" aria-label="Case 04, 4 of 4" aria-hidden="true" inert hidden>
+            <video data-src="assets/videos/SpectralWeave_04_HHA.mp4" controls muted loop playsinline preload="none" aria-label="Case 04 animation" hidden></video>
+            <div class="case-placeholder"><span class="case-watermark" aria-hidden="true">04</span><span class="case-label">Case 04</span><p>Video coming soon</p></div>
           </article>
         </div>
         <button class="case-arrow case-prev" type="button" aria-label="Previous case" aria-controls="case-slides" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button>
         <button class="case-arrow case-next" type="button" aria-label="Next case" aria-controls="case-slides" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button>
       </div>
       <div class="case-navigation" hidden>
-        <p class="case-counter" aria-hidden="true"><span id="case-current">01</span><span class="case-divider">/</span>03</p>
+        <p class="case-counter" aria-hidden="true"><span id="case-current">01</span><span class="case-divider">/</span>04</p>
         <div class="case-dots" role="group" aria-label="Choose a case">
           <button type="button" class="case-dot" aria-label="Show case 01" aria-controls="case-01" aria-pressed="true"><span></span></button>
           <button type="button" class="case-dot" aria-label="Show case 02" aria-controls="case-02" aria-pressed="false"><span></span></button>
           <button type="button" class="case-dot" aria-label="Show case 03" aria-controls="case-03" aria-pressed="false"><span></span></button>
+          <button type="button" class="case-dot" aria-label="Show case 04" aria-controls="case-04" aria-pressed="false"><span></span></button>
         </div>
         <span class="case-nav-label">Generation examples</span>
       </div>
-      <p class="visually-hidden case-announcement" role="status" aria-live="polite" aria-atomic="true">Case 01 of 03.</p>
+      <p class="visually-hidden case-announcement" role="status" aria-live="polite" aria-atomic="true">Case 01 of 04.</p>
     </section>
-
-    <figure class="teaser container" id="overview">
-      <a class="teaser-link" href="assets/spectralweave-teaser.png" aria-label="Enlarge the SpectralWeave teaser">
-        <img src="assets/spectralweave-teaser.png" width="1009" height="414" fetchpriority="high" alt="SpectralWeave teaser: nine groups of successive mesh poses, with turquoise and magenta humanoids, colorful robots, a cartoon character, a pig, a deer, and a white sheep performing different actions.">
-      </a>
-      <figcaption><strong class="inline-accent">SpectralWeave</strong> generates native 4D mesh sequences from a supplied, unrigged mesh and a semantic action condition, while preserving the <strong>original topology</strong>. Examples span human and animal identities.</figcaption>
-    </figure>
 
     <section class="abstract-section paper-section" id="abstract" aria-labelledby="abstract-title">
       <div class="reading-width">
@@ -116,9 +114,5 @@
     <p>Website style inspired by <a href="https://remysabathier.github.io/actionmesh/">ActionMesh</a> and <a href="https://xiaokunsun.github.io/MorphAny3D.github.io/">MorphAny3D</a>.</p>
     <p>Page maintained by <a href="https://github.com/anoymouscell">anoymouscell</a>.</p>
   </footer>
-  <dialog class="figure-dialog" aria-label="SpectralWeave teaser">
-    <button type="button" class="close-dialog" aria-label="Close enlarged figure">Close <span aria-hidden="true">×</span></button>
-    <img src="assets/spectralweave-teaser.png" width="1009" height="414" alt="Full SpectralWeave teaser showing successive human and animal mesh poses.">
-  </dialog>
 </body>
 </html>
