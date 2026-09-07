@@ -4,9 +4,9 @@ Anonymous project page: https://anoymouscell.github.io/spectralweave/
 
 ## Page structure
 
-- `index.html`: paper title, supplied teaser, original abstract, method schematic, and release sections.
+- `index.html`: paper title, three-case video carousel, supplied teaser, original abstract, method schematic, and release sections.
 - `styles.css`: responsive layout, typography, and color palette.
-- `script.js`: progressive enhancement for the enlarged teaser dialog.
+- `script.js`: case navigation and video playback management, plus the enlarged teaser dialog.
 - `assets/`: the supplied paper teaser and spectral icon.
 - `vendor/`: retained reference styles and locally served Avenir fonts.
 - `TEMPLATE_SOURCES.md`: reference template attribution.
@@ -14,6 +14,22 @@ Anonymous project page: https://anoymouscell.github.io/spectralweave/
 The page uses static HTML, CSS, and JavaScript. No build step or remote runtime dependency is required. For local preview, run `python -m http.server 8765` from this directory.
 
 ## Adding materials
+
+### Opening case carousel
+
+The `#showcase` carousel sits below the paper header and before the static teaser. It contains three independent cases, with circular previous/next controls, direct selection dots, a case counter, keyboard navigation (Left/Right, Home/End) and touch swipes. Navigation wraps in both directions. Reduced-motion preferences disable slide transitions and automatic video playback.
+
+To add the three videos, place them under `assets/videos/` and set the corresponding `<video data-src="">` in `#case-01`, `#case-02` and `#case-03`:
+
+| Case | Suggested `data-src` value |
+| --- | --- |
+| 01 | `assets/videos/case-01.mp4` |
+| 02 | `assets/videos/case-02.mp4` |
+| 03 | `assets/videos/case-03.mp4` |
+
+Leave `data-src` empty until each file is ready; this shows an honest placeholder and avoids requests for nonexistent videos. The script loads a case on first selection, reveals its player when metadata is ready, and plays only the current video while the carousel is in view. Native controls allow pausing or seeking, including when reduced motion disables automatic playback. Offscreen cases pause, and videos retain their full frame with `object-fit: contain`. Update each video's accessible label to describe the actual case and add subtitles if the video contains speech.
+
+### Comparison results
 
 Replace the release labels with links when the paper, research code, video, and citation are available. The Results section has two comparison settings:
 
