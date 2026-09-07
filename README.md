@@ -4,10 +4,10 @@ Anonymous project page: https://anoymouscell.github.io/spectralweave/
 
 ## Page structure
 
-- `index.html`: title, overview, method schematic, original abstract, and release sections.
+- `index.html`: paper title, supplied teaser, original abstract, method schematic, and release sections.
 - `styles.css`: responsive layout, typography, and color palette.
-- `script.js`: overview domain filters, enlarged figure dialog, and method walkthrough.
-- `assets/`: the existing overview figure and spectral icon.
+- `script.js`: progressive enhancement for the enlarged teaser dialog.
+- `assets/`: the supplied paper teaser and spectral icon.
 - `vendor/`: retained reference styles and locally served Avenir fonts.
 - `TEMPLATE_SOURCES.md`: reference template attribution.
 
@@ -15,9 +15,9 @@ The page uses static HTML, CSS, and JavaScript. No build step or remote runtime 
 
 ## Adding materials
 
-Replace the release labels with links when the paper, research code, video, and citation are available. Add actual result media to the animal and human result sections; the overview image is currently an illustration, not a video player. Keep `width`, `height`, descriptive alternatives, and `playsinline` / playback controls on future media.
+Replace the release labels with links when the paper, research code, video, and citation are available. Add actual result media to the animal and human result sections; the teaser is a static image of mesh sequences. Keep `width`, `height`, descriptive alternatives, and `playsinline` / playback controls on future media.
 
-The domain filters show the top (human) or bottom (animal) half of the current overview image using CSS. Update those rules if its composition changes. The method visualization is a schematic based on the abstract.
+The teaser is displayed in full, without cropping or color adjustments. Teal, blue, rose and ochre from the teaser inform the gradient headings. The method visualization is a schematic based on the abstract.
 
 ## Anonymous publishing
 
