@@ -4,87 +4,75 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Anonymous">
-  <meta name="description" content="SpectralWeave: native 4D mesh generation across independently meshed identities.">
-  <title>SpectralWeave: Aligning Spectral Coordinates for Native 4D Mesh Generation</title>
+  <meta name="description" content="SpectralWeave aligns spectral coordinates across independently meshed identities for native 4D mesh generation.">
+  <meta name="theme-color" content="#ffffff">
   <meta property="og:title" content="SpectralWeave: Aligning Spectral Coordinates for Native 4D Mesh Generation">
-  <link rel="stylesheet" href="vendor/actionmesh/bulma.min.css">
-  <link rel="stylesheet" href="vendor/actionmesh/main.css">
-  <link rel="stylesheet" href="vendor/morphany3d/main.css">
-  <link rel="stylesheet" href="styles.css?v=academic-80">
+  <meta property="og:description" content="From an unrigged mesh to a native 4D sequence, through a synchronized spectral motion space.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://anoymouscell.github.io/spectralweave/">
+  <meta property="og:image" content="https://anoymouscell.github.io/spectralweave/assets/spectralweave-teaser.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>SpectralWeave: Aligning Spectral Coordinates for Native 4D Mesh Generation</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="vendor/morphany3d/fonts/regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=2">
+  <script src="script.js?v=2" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="navigation container" aria-label="Main navigation">
+      <a class="wordmark" href="#top"><img src="assets/favicon.svg" width="27" height="27" alt="">SpectralWeave</a>
+      <div class="nav-links"><a href="#overview">Overview</a><a href="#method">Method</a><a href="#abstract">Abstract</a><a href="#resources">Resources <span aria-hidden="true">↗</span></a></div>
+    </nav>
+  </header>
   <main id="main">
-    <!-- ActionMesh hero/columns/links structure, MorphAny3D title and type. -->
-    <section class="hero">
-      <div class="hero-body">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <h1 id="title" class="publication-title">
-              <span class="method-name-4d">SpectralWeave:</span><br>
-              <span class="paper-subtitle">Aligning Spectral Coordinates<br>for Native 4D Mesh Generation</span>
-            </h1>
-            <div id="authors" class="publication-authors"><span>Anonymous</span></div>
-            <div class="publication-links">
-              <span class="link-block"><button class="button is-normal is-rounded is-dark" disabled>Paper</button></span>
-              <span class="link-block"><button class="button is-normal is-rounded is-dark" disabled>Code</button></span>
-              <span class="link-block"><button class="button is-normal is-rounded is-dark" disabled>Video</button></span>
-            </div>
-          </div>
-        </div>
+    <section class="hero container" id="top" aria-labelledby="title">
+      <p class="eyebrow"><span class="spectral-line" aria-hidden="true"></span> Native 4D mesh generation</p>
+      <h1 id="title"><span class="project-name">SpectralWeave:</span> <span class="paper-title">Aligning Spectral Coordinates for Native 4D Mesh Generation</span></h1>
+      <p class="authors">Anonymous authors</p>
+      <div class="publication-links" aria-label="Project materials">
+        <a class="resource-button primary" href="#overview"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m3 6 7-4 7 4v8l-7 4-7-4Z M3 6l7 4 7-4 M10 10v8"/></svg>Explore the overview <span aria-hidden="true">↓</span></a>
+        <span class="resource-button unavailable"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 2h7l4 4v12H5Z M12 2v5h4 M8 11h5 M8 14h5"/></svg>Paper <span class="soon">Soon</span></span>
+        <span class="resource-button unavailable"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 5-5 5 5 5 M14 5l5 5-5 5 M12 3l-4 14"/></svg>Code <span class="soon">Soon</span></span>
       </div>
     </section>
-    <section id="teaser" aria-label="Teaser">
-      <img src="assets/spectralweave-teaser.webp" width="2100" height="1000" alt="Native-topology motion sequences generated for two human and two animal meshes.">
-      <p class="x-center-text tldr"><b>TL;DR:</b> SpectralWeave animates a supplied, unrigged mesh from a semantic action condition while preserving its <b>native topology</b>, using a synchronized spectral motion space.</p>
-    </section>
-    <section class="section" aria-labelledby="abstract-title">
-      <div class="columns is-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3 has-text-centered" id="abstract-title">Abstract</h2>
-          <div class="content has-text-justified abstract-text">
-            <p>Native 4D mesh generation directly animates a supplied, unrigged mesh from a semantic action condition while preserving its native topology. We introduce <strong>SpectralWeave</strong>, to our knowledge, the first spectral generative framework for this challenging task across <em>independently</em> meshed identities. It models surface motion as trajectories of Laplacian coefficients, providing a fixed-size learning space and direct decoding on the supplied vertices without a learned mesh autoencoder. The key difficulty is that independently computed bases assign different coordinate axes to corresponding deformations, making their coefficients incompatible. Bounded, invertible identity adapters constrained by pairwise functional maps align these coefficients while preserving each reconstruction subspace. This factors mesh-dependent coordinate variation out of the generative task, allowing action- and morphology-conditioned diffusion to model mesh trajectories under a consistent coordinate convention. The target adapter and native basis decode generated trajectories into topology-preserving mesh sequences, while geometry-aware supervision and deterministic refinement preserve local surface structure. Experiments in separate animal and human domains demonstrate coherent generation on new identities without their motion data, while ablations show that spectral synchronization improves cross-identity generalization.</p>
-          </div>
-        </div>
+    <section class="overview container" id="overview" aria-labelledby="overview-title">
+      <div class="figure-toolbar"><h2 id="overview-title">One motion space. Different meshes.</h2><div class="domain-switch" role="group" aria-label="Filter overview by domain" hidden><button type="button" data-domain="all" aria-pressed="true">All</button><button type="button" data-domain="human" aria-pressed="false">Human</button><button type="button" data-domain="animal" aria-pressed="false">Animal</button></div></div>
+      <figure class="teaser-figure">
+        <a class="teaser-link" href="assets/spectralweave-teaser.webp" aria-label="Enlarge the SpectralWeave overview figure">
+          <div class="teaser-window" data-domain="all"><img id="teaser-image" src="assets/spectralweave-teaser.webp" width="2100" height="1000" fetchpriority="high" alt="SpectralWeave overview: two human meshes and two animal meshes, each illustrated with shared motion coordinates and a sequence of poses."></div>
+          <span class="enlarge-label"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 8V3h5 M12 3h5v5 M17 12v5h-5 M8 17H3v-5"/></svg> Enlarge</span>
+        </a>
+        <figcaption><span class="figure-index">01 / OVERVIEW</span><span id="figure-description">A shared spectral motion space connects independently meshed identities while retaining each mesh’s native topology.</span></figcaption>
+      </figure>
+      <div class="tldr"><span class="small-label">The idea</span><p>Animate a supplied, unrigged mesh from a semantic action condition—<strong>with the original vertices and connectivity intact.</strong></p></div>
+      <div class="principles">
+        <div><span class="principle-number">01</span><h3>Native topology</h3><p>Generated motion is decoded directly onto the supplied mesh.</p></div>
+        <div><span class="principle-number">02</span><h3>Shared coordinates</h3><p>Identity adapters align independently computed spectral bases.</p></div>
+        <div><span class="principle-number">03</span><h3>Across identities</h3><p>A consistent motion space supports generation for new meshes.</p></div>
       </div>
     </section>
-
-    <!-- MorphAny3D separate result sections + ActionMesh input/output tables. -->
-    <section aria-labelledby="animal-title">
-      <h2 class="x-section-title" id="animal-title">Results &nbsp;|&nbsp; Animal domain</h2>
-      <div class="video-table result-table">
-        <div class="header-row"><div>Input mesh</div><div>SpectralWeave</div><div>Input mesh</div><div>SpectralWeave</div></div>
-        <div class="video-row"><div class="cell media-slot">Input</div><div class="cell media-slot">Result coming soon</div><div class="cell media-slot">Input</div><div class="cell media-slot">Result coming soon</div></div>
-      </div>
+    <section class="method-section" id="method" aria-labelledby="method-title"><div class="container">
+      <div class="section-heading"><div><p class="eyebrow">From geometry to motion</p><h2 id="method-title">A common language for different meshes.</h2></div><p>Represent surface motion in a spectral basis, align its coordinates, then generate and decode on the original mesh.</p></div>
+      <div class="method-flow" aria-label="SpectralWeave method schematic"><div class="flow-node" data-stage="0"><div class="flow-visual visual-0"><svg viewBox="0 0 180 110" aria-hidden="true"><path d="m90 9 36 19 16 32-16 31-36 12-36-12-16-31 16-32Z M90 9 67 38l-13 53 M90 9l23 29 13 53 M38 60l29-22 46 0 29 22 M38 60l34 13 36 0 34-13 M54 91l18-18-5-35 M126 91l-18-18 5-35 M90 103 72 73 M90 103l18-30 M54 28l13 10 M126 28l-13 10 M67 38l41 35 M113 38 72 73"/><circle cx="67" cy="38" r="3"/><circle cx="108" cy="73" r="3"/><circle cx="90" cy="9" r="3"/></svg></div><span class="stage-label">01 · Represent</span><h3>Native spectral basis</h3><p>Surface motion → coefficients</p></div><span class="flow-arrow" aria-hidden="true">→</span><div class="flow-node" data-stage="1"><div class="flow-visual visual-1"><svg viewBox="0 0 180 110" aria-hidden="true"><path stroke="#346aa0" d="M8 30c24-45 28 79 56 22s36-45 50 0 40 16 58-22"/><path stroke="#328980" d="M8 55c24-45 28 79 56 22s36-45 50 0 40 16 58-22"/><path stroke="#8073ac" d="M8 80c24-45 28-61 56-3s36-9 50-30 40 54 58 23"/></svg></div><span class="stage-label">02 · Align</span><h3>Identity adapters</h3><p>A consistent coordinate convention</p></div><span class="flow-arrow" aria-hidden="true">→</span><div class="flow-node" data-stage="2"><div class="flow-visual visual-2"><span class="condition">Action + morphology</span><div class="latent-grid" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><span class="stage-label">03 · Generate</span><h3>Conditional diffusion</h3><p>Aligned coefficient trajectories</p></div><span class="flow-arrow" aria-hidden="true">→</span><div class="flow-node" data-stage="3"><div class="flow-visual visual-3"><svg viewBox="0 0 180 110" aria-hidden="true"><g stroke="#b3b6c7"><path d="m23 29 18-6 18 8 0 47-18 9-18-8Z M23 29l18 12 18-10 M41 41v46 M23 53l18 10 18-9 M23 29l18 34 18 15"/></g><g stroke="#8a9bb1"><path d="m72 25 19-7 18 12-4 47-19 11-18-10Z M72 25l18 17 19-12 M90 42l-4 46 M70 52l18 11 18-10 M72 25l16 38 17 14"/></g><g stroke="#4d8297"><path d="m126 25 20-3 17 16-10 43-21 6-17-13Z M126 25l16 18 21-5 M142 43l-10 44 M120 50l17 13 21-8 M126 25l11 38 16 18"/></g><path stroke="#c1c9ce" d="M20 101h142m-5-4 5 4-5 4"/></svg></div><span class="stage-label">04 · Decode</span><h3>Native 4D sequence</h3><p>Original vertices and connectivity</p></div></div>
+      <div class="method-detail"><div class="step-controls" aria-label="Method details" hidden><button type="button" data-step="0" aria-pressed="false">01</button><button type="button" data-step="1" aria-pressed="true">02</button><button type="button" data-step="2" aria-pressed="false">03</button><button type="button" data-step="3" aria-pressed="false">04</button></div><div class="step-copy" aria-live="polite" aria-atomic="true"><h3 id="step-title">Why align spectral coordinates?</h3><p id="step-description">Independently computed bases assign different coordinate axes to corresponding deformations. Bounded, invertible identity adapters, constrained by pairwise functional maps, align the coefficients while preserving each reconstruction subspace.</p></div><span class="schematic-note">Method schematic</span></div>
+    </div></section>
+    <section class="abstract-section container" id="abstract" aria-labelledby="abstract-title">
+      <div class="section-heading compact"><div><p class="eyebrow">The research</p><h2 id="abstract-title">Abstract</h2></div><span class="section-index" aria-hidden="true">Spectral coordinates → native motion</span></div>
+      <div class="abstract-copy"><p>Native 4D mesh generation directly animates a supplied, unrigged mesh from a semantic action condition while preserving its native topology. We introduce <strong>SpectralWeave</strong>, to our knowledge, the first spectral generative framework for this challenging task across <em>independently</em> meshed identities. It models surface motion as trajectories of Laplacian coefficients, providing a fixed-size learning space and direct decoding on the supplied vertices without a learned mesh autoencoder. </p><p>The key difficulty is that independently computed bases assign different coordinate axes to corresponding deformations, making their coefficients incompatible. Bounded, invertible identity adapters constrained by pairwise functional maps align these coefficients while preserving each reconstruction subspace. This factors mesh-dependent coordinate variation out of the generative task, allowing action- and morphology-conditioned diffusion to model mesh trajectories under a consistent coordinate convention. </p><p>The target adapter and native basis decode generated trajectories into topology-preserving mesh sequences, while geometry-aware supervision and deterministic refinement preserve local surface structure. Experiments in separate animal and human domains demonstrate coherent generation on new identities without their motion data, while ablations show that spectral synchronization improves cross-identity generalization.</p></div>
     </section>
-    <section aria-labelledby="human-title">
-      <h2 class="x-section-title" id="human-title">Results &nbsp;|&nbsp; Human domain</h2>
-      <div class="video-table result-table">
-        <div class="header-row"><div>Input mesh</div><div>SpectralWeave</div><div>Input mesh</div><div>SpectralWeave</div></div>
-        <div class="video-row"><div class="cell media-slot">Input</div><div class="cell media-slot">Result coming soon</div><div class="cell media-slot">Input</div><div class="cell media-slot">Result coming soon</div></div>
-      </div>
+    <section class="results-section container" id="results" aria-labelledby="results-title">
+      <div class="section-heading compact"><div><p class="eyebrow">Experiments</p><h2 id="results-title">Motion across domains</h2></div><p>Full animation results will be added here.</p></div>
+      <div class="result-domains"><div class="domain-card"><span class="domain-symbol" aria-hidden="true">A</span><div><h3>Animal domain</h3><p>Native mesh animation sequences</p></div><span class="availability">Forthcoming</span></div><div class="domain-card"><span class="domain-symbol human" aria-hidden="true">H</span><div><h3>Human domain</h3><p>Native mesh animation sequences</p></div><span class="availability">Forthcoming</span></div></div>
+      <div class="additional-results"><span>Comparisons</span><span>Ablation studies</span><span class="muted">Additional results forthcoming</span></div>
     </section>
-    <section aria-labelledby="comparison-title">
-      <h2 class="x-section-title" id="comparison-title">Comparison</h2>
-      <div class="figure-slot">Comparison results coming soon</div>
+    <section class="resources-section container" id="resources" aria-labelledby="resources-title">
+      <div class="section-heading compact"><div><p class="eyebrow">Project materials</p><h2 id="resources-title">Resources</h2></div><p>The paper, research code, video and citation will be available here upon release.</p></div>
+      <div class="release-list"><div><span>Paper</span><span class="muted">Forthcoming</span></div><div><span>Research code</span><span class="muted">Forthcoming</span></div><div><span>Video</span><span class="muted">Forthcoming</span></div><div><span>Citation</span><span class="muted">Forthcoming</span></div></div>
     </section>
-    <section aria-labelledby="ablation-title">
-      <h2 class="x-section-title" id="ablation-title">Ablation Study</h2>
-      <div class="figure-slot">Ablation results coming soon</div>
-    </section>
-    <section aria-labelledby="method-title">
-      <h2 class="x-section-title" id="method-title">Methodology</h2>
-      <div class="figure-slot">Method figure coming soon</div>
-      <p class="method-caption">SpectralWeave represents surface motion as Laplacian coefficient trajectories. Identity adapters align the spectral coordinates for action- and morphology-conditioned diffusion. The target adapter and native basis decode the generated motion directly onto the supplied mesh.</p>
-    </section>
-    <section aria-labelledby="citation-title">
-      <h2 class="x-section-title" id="citation-title">Citation</h2>
-      <p class="x-note">Citation will be available with the paper.</p>
-    </section>
-    <footer class="template-credit">
-      Page template adapted from
-      <a href="https://remysabathier.github.io/actionmesh/">ActionMesh</a> and
-      <a href="https://xiaokunsun.github.io/MorphAny3D.github.io/">MorphAny3D</a>.
-    </footer>
   </main>
+  <footer class="site-footer container"><div><a class="wordmark" href="#top"><img src="assets/favicon.svg" alt="" width="24" height="24">SpectralWeave</a><p>Page maintained by <a href="https://github.com/anoymouscell">anoymouscell</a>.</p></div><p>Design adapted from <a href="https://remysabathier.github.io/actionmesh/">ActionMesh</a><br>and <a href="https://xiaokunsun.github.io/MorphAny3D.github.io/">MorphAny3D</a>.</p><a class="back-top" href="#top">Back to top <span aria-hidden="true">↑</span></a></footer>
+  <dialog class="figure-dialog" aria-label="SpectralWeave overview figure"><button type="button" class="close-dialog" aria-label="Close enlarged figure">Close <span aria-hidden="true">×</span></button><img src="assets/spectralweave-teaser.webp" width="2100" height="1000" alt="Full overview of SpectralWeave showing human and animal meshes, spectral coordinates, and illustrated pose sequences."><p>SpectralWeave · Overview</p></dialog>
 </body>
 </html>

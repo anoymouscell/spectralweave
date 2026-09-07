@@ -1,18 +1,10 @@
 # Template sources
 
-This page combines source components from the two requested academic pages:
+Visual references supplied for this project:
 
-- ActionMesh: https://github.com/RemySabathier/actionmesh
-  - Unmodified: static/css/bulma.min.css and static/css/main.css.
-  - Adapted: hero / centered columns / publication links and input-output tables.
-- MorphAny3D: https://github.com/XiaokunSun/MorphAny3D.github.io
-  - Unmodified: css/main.css and AvenirNextCyr Regular/Medium/Demi/Bold WOFF2 files.
-  - Reused: Avenir typography, main content width, section headings and spacing.
+- [ActionMesh](https://remysabathier.github.io/actionmesh/) ([source](https://github.com/RemySabathier/actionmesh)): continuous title with an accent-colored project name, centered resource pills, and prominent research media.
+- [MorphAny3D](https://xiaokunsun.github.io/MorphAny3D.github.io/) ([source](https://github.com/XiaokunSun/MorphAny3D.github.io)): Avenir typography, generous whitespace, and separate research sections.
 
-Downloaded 2026-09-07. Local integration rules are in styles.css.
-The two website repositories do not expose a top-level license in their file trees;
-upstream notices are retained in the vendored files. The page acknowledges both
-templates in its footer. Fonts remain subject to their original licenses.
+The original imported CSS and fonts remain unmodified under `vendor/`. The redesigned page loads its own `styles.css` and serves the existing Avenir fonts locally; it no longer loads the three overlapping upstream stylesheets. The original upstream notices are retained. Fonts remain subject to their original licenses.
 
-Only layout, styles and fonts are reused. Reference papers' author lists,
-institutions, media, analytics and results are not included.
+The overview image was already included in this project. The spectral mark, method schematic, responsive layout, and progressive interactions were created for this page. No reference-paper media, authors, institutions, analytics, or research results are included. Both references are credited in the page footer.
