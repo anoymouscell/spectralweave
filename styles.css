@@ -101,7 +101,7 @@ h3 { font-size: 20px; line-height: 1.35; color: var(--rose); }
 .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
 .case-showcase { margin-top: 39px; }
 .case-stage { position: relative; }
-.case-viewport { position: relative; aspect-ratio: 16 / 6; overflow: hidden; border: 1px solid #e7ebeb; border-radius: 8px; background: #fafbfb; isolation: isolate; touch-action: pan-y pinch-zoom; }
+.case-viewport { position: relative; aspect-ratio: 2688 / 1688; overflow: hidden; border: 1px solid #e7ebeb; border-radius: 8px; background: #fafbfb; isolation: isolate; touch-action: pan-y pinch-zoom; }
 .case-slide { position: absolute; inset: 0; background: white; }
 .case-slide[hidden], .case-slide video[hidden], .case-placeholder[hidden], .case-arrow[hidden], .case-navigation[hidden] { display: none; }
 .case-slide video { display: block; width: 100%; height: 100%; object-fit: contain; background: #fff; }
@@ -195,7 +195,6 @@ h3 { font-size: 20px; line-height: 1.35; color: var(--rose); }
   .method-flow { grid-template-columns: 1fr 24px 1fr; gap: 22px 8px; }
   .flow-arrow:nth-of-type(2) { display: none; }
   .flow-node p { font-size: 14px; }
-  .case-viewport { aspect-ratio: 16 / 8; }
   .case-arrow { width: 44px; height: 44px; }
   .case-prev { left: -14px; }
   .case-next { right: -14px; }
@@ -211,7 +210,6 @@ h3 { font-size: 20px; line-height: 1.35; color: var(--rose); }
   .resource-pill { padding: 6px 11px; font-size: 13px; }
   .soon { font-size: 11px; }
   .case-showcase { margin-top: 29px; }
-  .case-viewport { aspect-ratio: 4 / 3; }
   .case-label { font-size: 26px; }
   .case-placeholder p { font-size: 14px; }
   .case-watermark { right: 10%; bottom: -10px; font-size: 150px; letter-spacing: -8px; }
