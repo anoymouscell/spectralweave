@@ -131,10 +131,16 @@ h3 { font-size: 20px; line-height: 1.35; color: var(--rose); }
 .latent-grid i:nth-child(5n) { background: #ae8fc1; }
 .method-figure figcaption { max-width: 930px; margin: 30px auto 0; font-size: 15px; line-height: 1.75; }
 .results-section { border-top: 1px solid #ededed; }
-.results-section h2, .results-notes h3 { --heading-gradient: linear-gradient(105deg, #ad619b, #c7717e 55%, #b78335); }
-.results-notes { width: min(840px, 100%); display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 32px; text-align: center; }
-.results-notes h3 { width: fit-content; margin-inline: auto; }
-.results-notes p { margin-top: 10px; color: var(--muted); font-size: 16px; }
+.results-section h2 { --heading-gradient: linear-gradient(105deg, #ad619b, #c7717e 55%, #b78335); }
+.comparison-section { margin-top: 38px; text-align: center; }
+.comparison-section + .comparison-section { margin-top: 44px; }
+.comparison-section h3 { width: fit-content; margin-inline: auto; font-size: 25px; }
+#image-to-3d-comparisons h3 { --heading-gradient: linear-gradient(105deg, #ad619b, #c7717e 55%, #b78335); }
+.comparison-description { max-width: 840px; margin: 12px auto 23px; font-size: 16px; }
+.comparison-media { display: grid; gap: 24px; }
+.comparison-placeholder { display: grid; place-items: center; min-height: 140px; padding: 24px; background: #fafafa; border-block: 1px solid #ededed; color: var(--muted); font-size: 15px; }
+.comparison-media video { display: block; width: 100%; height: auto; }
+.comparison-media figcaption { margin-top: 12px; font-size: 15px; line-height: 1.6; }
 .resources-section { text-align: center; padding-top: 20px; padding-bottom: 58px; }
 .resources-section h2 { --heading-gradient: linear-gradient(100deg, #299b96, #5398bb 55%, #ae689d); }
 .resources-section p { color: #646464; }
@@ -176,7 +182,9 @@ h3 { font-size: 20px; line-height: 1.35; color: var(--rose); }
   .condition { font-size: 11px; }
   .latent-grid { grid-template-columns: repeat(8, 10px); gap: 4px; }
   .latent-grid i { width: 10px; height: 10px; }
-  .results-notes { width: 100%; grid-template-columns: 1fr; gap: 25px; }
+  .comparison-section h3 { font-size: 22px; }
+  .comparison-section + .comparison-section { margin-top: 34px; }
+  .comparison-placeholder { min-height: 115px; }
   .resources-section { padding-top: 15px; padding-bottom: 40px; }
 }
 @media (prefers-reduced-motion: reduce) {

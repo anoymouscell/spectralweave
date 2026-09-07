@@ -16,7 +16,7 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="vendor/morphany3d/fonts/regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="vendor/morphany3d/fonts/bold.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="styles.css?v=4">
   <script src="script.js?v=3" defer></script>
 </head>
 <body>
@@ -57,11 +57,23 @@
 
     <section class="paper-section container results-section" id="results" aria-labelledby="results-title">
       <h2 id="results-title">Results</h2>
-      <p class="section-intro">The teaser shows example mesh sequences in the human and animal domains.</p>
-      <div class="results-notes reading-width">
-        <div><h3>Human &amp; animal motion</h3><p>Full animation sequences will be added here.</p></div>
-        <div><h3>Comparisons &amp; ablations</h3><p>Additional experimental results will follow.</p></div>
-      </div>
+      <p class="section-intro">Video comparisons on unseen test identities and on 3D meshes generated from images.</p>
+      <section class="comparison-section" id="test-comparisons" aria-labelledby="test-comparisons-title">
+        <h3 id="test-comparisons-title">Comparisons on Unseen Test Identities</h3>
+        <p class="comparison-description">Comparisons on the test set. <strong>All test identities are unseen during training.</strong></p>
+        <div class="comparison-media">
+          <!-- Add comparison videos here, mixing human and animal examples. -->
+          <p class="comparison-placeholder">Comparison videos coming soon.</p>
+        </div>
+      </section>
+      <section class="comparison-section" id="image-to-3d-comparisons" aria-labelledby="image-to-3d-comparisons-title">
+        <h3 id="image-to-3d-comparisons-title">Comparisons on Image-to-3D Meshes</h3>
+        <p class="comparison-description">Comparisons using 3D meshes generated from input images.</p>
+        <div class="comparison-media">
+          <!-- Add image-to-3D comparison videos here, mixing human and animal examples. -->
+          <p class="comparison-placeholder">Comparison videos coming soon.</p>
+        </div>
+      </section>
     </section>
 
     <section class="paper-section reading-width resources-section" id="resources" aria-labelledby="resources-title">
