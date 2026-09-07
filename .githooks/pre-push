@@ -1,0 +1,9 @@
+#!/bin/sh
+expected='anoymouscell <325942126+anoymouscell@users.noreply.github.com>'
+account=$(gh api user --jq .login) || exit 1
+[ "$account" = anoymouscell ] || { echo 'Push blocked: sign in to GitHub CLI as anoymouscell.' >&2; exit 1; }
+while read local_ref local_oid remote_ref remote_oid; do
+  case "$local_oid" in *[!0]*) ;; *) continue ;; esac
+  invalid=$(git log "$local_oid" --format='%an <%ae>%n%cn <%ce>' | grep -Fvx "$expected")
+  [ -z "$invalid" ] || { echo 'Push blocked: history contains a different identity.' >&2; exit 1; }
+done

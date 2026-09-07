@@ -1,0 +1,9 @@
+#!/bin/sh
+expected='anoymouscell <325942126+anoymouscell@users.noreply.github.com>'
+for kind in GIT_AUTHOR_IDENT GIT_COMMITTER_IDENT; do
+  ident=$(git var "$kind") || exit 1
+  case "$ident" in
+    "$expected "*) ;;
+    *) echo "Commit blocked: identity must be $expected" >&2; exit 1 ;;
+  esac
+done
