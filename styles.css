@@ -6,29 +6,38 @@
 @font-face { font-family: Avenir; src: url("vendor/morphany3d/fonts/medium.woff2") format("woff2"); font-weight: 500; font-display: swap; }
 @font-face { font-family: Avenir; src: url("vendor/morphany3d/fonts/demi.woff2") format("woff2"); font-weight: 600; font-display: swap; }
 @font-face { font-family: Avenir; src: url("vendor/morphany3d/fonts/bold.woff2") format("woff2"); font-weight: 700 900; font-display: swap; }
-body { margin: 0; background: white; color: #363636; }
+body { margin: 0; background: white; color: #303943; }
 * { font-family: Avenir, "Segoe UI", sans-serif; }
-#main { padding: 48px 24px 48px; max-width: 1048px; }
-.hero-body { padding: 16px 0 28px; }
-#title { margin-bottom: 24px; font-size: 54px; line-height: 1.15; }
-.paper-subtitle { display: inline-block; margin-top: 12px; font-size: 34px; line-height: 1.25; color: #363636; font-weight: 600; }
-#authors { font-size: 20px; margin: 18px auto; }
+#main { padding: 56px 32px 48px; max-width: 1160px; }
+.hero-body { padding: 16px 0 36px; }
+#title { margin-bottom: 24px; font-size: 56px; line-height: 1.15; letter-spacing: -.8px; }
+.method-name-4d { color: #315d78; font-weight: 700; }
+.paper-subtitle { display: inline-block; margin-top: 14px; font-size: 36px; line-height: 1.3; letter-spacing: -.4px; color: #28343e; font-weight: 600; }
+#authors { font-size: 20px; margin: 22px auto; color: #59636b; }
 .publication-links { margin: 20px 0 0; }
 .link-block { display: inline-block; margin: 0 3px; }
-.button[disabled] { opacity: .75; }
+.button.is-dark[disabled] { opacity: 1; background: #46535e; border-color: #46535e; color: #f7f9fa; box-shadow: none; }
 #teaser { margin: 0; }
 #teaser img { display: block; width: 100%; height: auto; }
-.tldr { font-size: 20px; font-weight: 500; color: #3f3f3f; margin: 24px 16px; }
-.abstract-text p { margin: 0; color: #363636; line-height: 1.65; }
-.section { padding: 24px 0; }
-.x-section-title { line-height: 1.3; }
+.tldr { font-size: 19px; font-weight: 400; color: #47545f; margin: 26px 32px 18px; line-height: 1.65; }
+.tldr b { color: #315d78; }
+.abstract-text p { margin: 0; color: #38424b; line-height: 1.8; font-weight: 400; font-size: 18px; }
+.section { padding: 32px 0; }
+.section .title { color: #28343e; font-weight: 600; }
+.x-section-title { line-height: 1.3; color: #315d78; font-size: 30px; font-weight: 600; padding: 0 0 12px; margin: 64px 16px 24px; border-bottom: 1px solid #dce3e8; }
 .result-table { padding: 0 16px; }
 .result-table .header-row, .result-table .video-row { grid-template-columns: repeat(4,minmax(0,1fr)); }
-.media-slot { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #999; border: 1px solid #eee; text-align: center; }
-.video-row .cell { background: #fafafa; }
-.figure-slot { margin: 0 16px; min-height: 240px; display: flex; align-items: center; justify-content: center; background: #fafafa; color: #999; border: 1px solid #eee; }
+.media-slot { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #87919a; border: 1px solid #e7ebee; text-align: center; }
+.video-row .cell { background: #f8fafb; }
+.header-row { color: #586773; border-bottom-color: #e1e7eb; }
+.header-row > :nth-child(even) { color: #315d78; }
+.figure-slot { margin: 0 16px; min-height: 240px; display: flex; align-items: center; justify-content: center; background: #f8fafb; color: #87919a; border: 1px solid #e7ebee; }
 .method-caption { line-height: 1.65; }
-.template-credit { margin: 64px 16px 0; text-align: center; color: #888; font-size: 13px; }
+.template-credit { margin: 64px 16px 0; padding-top: 24px; border-top: 1px solid #e7ebee; text-align: center; color: #888; font-size: 13px; }
+/* Document scale, applied on every load; does not change browser settings.
+ * Keep mobile at its natural scale and preserve the user's browser zoom.
+ */
+@media (min-width: 1024px) { #main { zoom: .8; } }
 @media (max-width: 650px) {
   #main { padding: 24px 16px 32px; }
   #title { font-size: 40px; }
