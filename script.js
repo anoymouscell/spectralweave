@@ -91,6 +91,13 @@ if (showcase) {
   }
 
   videos.forEach((video, index) => {
+    video.loop = true;
+    // Keep the visible case repeating if a browser still emits an ended event.
+    video.addEventListener('ended', () => {
+      if (index !== current || !inView || document.hidden || reducedMotion.matches || video.error) return;
+      video.currentTime = 0;
+      playCurrent();
+    });
     video.addEventListener('loadedmetadata', () => {
       video.hidden = false;
       slides[index].querySelector('.case-placeholder').hidden = true;
