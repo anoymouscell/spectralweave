@@ -3,30 +3,165 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="anoymouscell">
-  <meta name="description" content="SpectralWeave project page.">
-  <title>SpectralWeave</title>
-  <style>
-    :root { color-scheme: light; font-family: system-ui, sans-serif; color: #172338; background: #f7f9fc; }
-    body { margin: 0; min-height: 100svh; display: grid; place-items: center; }
-    main { width: min(800px, calc(100% - 48px)); padding: 80px 0; text-align: center; }
-    .spectrum { height: 5px; width: 120px; margin: 0 auto 40px; border-radius: 8px; background: linear-gradient(90deg, #6d5ce7, #299fd6, #36bca4); }
-    h1 { margin: 0 0 20px; font-size: clamp(2.4rem, 9vw, 5rem); letter-spacing: -.055em; font-weight: 650; }
-    .author { color: #53637a; }
-    .status { margin: 52px 0; color: #53637a; line-height: 1.7; }
-    a { color: #374fc4; text-underline-offset: 4px; }
-    a:focus-visible { outline: 3px solid #299fd6; outline-offset: 6px; }
-    footer { margin-top: 90px; color: #6b7686; font-size: .85rem; }
-  </style>
+  <meta name="author" content="Anonymous">
+  <meta name="description" content="SpectralWeave generates native-topology 4D mesh sequences on unseen, independently meshed identities from semantic action conditions.">
+  <meta name="theme-color" content="#081d27">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SpectralWeave — Native 4D Mesh Generation">
+  <meta property="og:description" content="Shared spectral motion across independently meshed identities.">
+  <meta property="og:url" content="https://anoymouscell.github.io/spectralweave/">
+  <meta property="og:image" content="https://anoymouscell.github.io/spectralweave/assets/spectralweave-teaser.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>SpectralWeave — Native 4D Mesh Generation</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <main>
-    <div class="spectrum" aria-hidden="true"></div>
-    <h1>SpectralWeave</h1>
-    <p class="author">anoymouscell</p>
-    <p class="status">Project materials will be added here.</p>
-    <a href="https://github.com/anoymouscell/spectralweave">GitHub repository</a>
-    <footer>SpectralWeave · anoymouscell</footer>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="wordmark" href="#top" aria-label="SpectralWeave home">
+        <span class="wordmark-mark" aria-hidden="true"></span>
+        <span>SpectralWeave</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+        <span class="sr-only">Toggle navigation</span>
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="#abstract">Abstract</a>
+        <a href="#results">Results</a>
+        <a href="#method">Method</a>
+        <a href="#analysis">Analysis</a>
+        <a href="#citation">Citation</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" id="top">
+      <div class="hero-glow hero-glow-a" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-b" aria-hidden="true"></div>
+      <div class="shell hero-content">
+        <p class="eyebrow">Native 4D mesh generation</p>
+        <h1>SpectralWeave</h1>
+        <p class="subtitle">Shared spectral motion across independently meshed identities</p>
+        <p class="authors">Anonymous</p>
+        <p class="affiliation">Anonymous project page · materials in preparation</p>
+        <div class="resource-links" aria-label="Project resources">
+          <span class="resource-button is-disabled" aria-disabled="true"><span aria-hidden="true">▤</span> Paper <small>soon</small></span>
+          <span class="resource-button is-disabled" aria-disabled="true"><span aria-hidden="true">⌁</span> Code <small>soon</small></span>
+          <span class="resource-button is-disabled" aria-disabled="true"><span aria-hidden="true">▶</span> Video <small>soon</small></span>
+          <a class="resource-button" href="#results"><span aria-hidden="true">✦</span> Results</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="teaser-section reveal" aria-labelledby="teaser-heading">
+      <div class="shell shell-wide">
+        <h2 class="sr-only" id="teaser-heading">SpectralWeave teaser</h2>
+        <figure class="teaser-frame">
+          <img src="assets/spectralweave-teaser.webp" alt="SpectralWeave transfers shared spectral motion to two human and two animal native meshes." width="2100" height="1000">
+          <figcaption>One shared motion space, decoded directly on each supplied mesh while preserving its native topology.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section reveal" id="abstract" aria-labelledby="abstract-title">
+      <div class="shell prose-shell">
+        <div class="section-kicker">Overview</div>
+        <h2 id="abstract-title">Abstract</h2>
+        <p class="lead-callout">SpectralWeave animates an unrigged mesh from a semantic action condition—without replacing its connectivity or relying on a learned mesh autoencoder.</p>
+        <p>Native 4D mesh generation directly animates a supplied, unrigged mesh from a semantic action condition while preserving its native topology. We introduce <strong>SpectralWeave</strong>, to our knowledge, the first spectral generative framework for this challenging task across <em>independently</em> meshed identities. It models surface motion as trajectories of Laplacian coefficients, providing a fixed-size learning space and direct decoding on the supplied vertices without a learned mesh autoencoder.</p>
+        <p>The key difficulty is that independently computed bases assign different coordinate axes to corresponding deformations, making their coefficients incompatible. Bounded, invertible identity adapters constrained by pairwise functional maps align these coefficients while preserving each reconstruction subspace. This factors mesh-dependent coordinate variation out of the generative task, allowing action- and morphology-conditioned diffusion to model mesh trajectories under a consistent coordinate convention.</p>
+        <p>The target adapter and native basis decode generated trajectories into topology-preserving mesh sequences, while geometry-aware supervision and deterministic refinement preserve local surface structure. Experiments in separate animal and human domains demonstrate coherent generation on new identities without their motion data, while ablations show that spectral synchronization improves cross-identity generalization.</p>
+      </div>
+    </section>
+
+    <section class="section section-tinted reveal" id="results" aria-labelledby="results-title">
+      <div class="shell shell-wide">
+        <div class="section-heading">
+          <div><div class="section-kicker">Qualitative results</div><h2 id="results-title">Generation on unseen identities</h2></div>
+          <p>Result groups are ready for final videos, action prompts, and interactive 3D assets.</p>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Result domain">
+          <button class="tab is-active" type="button" role="tab" aria-selected="true" aria-controls="animal-results" id="animal-tab" data-tab="animal-results">Animal domain</button>
+          <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="human-results" id="human-tab" data-tab="human-results">Human domain</button>
+        </div>
+        <div class="tab-panel is-active" id="animal-results" role="tabpanel" aria-labelledby="animal-tab">
+          <div class="media-grid">
+            <article class="media-card"><div class="media-placeholder"><span>Animal result 01</span><small>video / 3D viewer</small></div><h3>Cross-identity generation</h3><p class="prompt">“Action prompt”</p></article>
+            <article class="media-card"><div class="media-placeholder"><span>Animal result 02</span><small>video / 3D viewer</small></div><h3>Large non-rigid motion</h3><p class="prompt">“Action prompt”</p></article>
+            <article class="media-card"><div class="media-placeholder"><span>Animal result 03</span><small>video / 3D viewer</small></div><h3>Native-topology sequence</h3><p class="prompt">“Action prompt”</p></article>
+          </div>
+        </div>
+        <div class="tab-panel" id="human-results" role="tabpanel" aria-labelledby="human-tab" hidden>
+          <div class="media-grid">
+            <article class="media-card"><div class="media-placeholder"><span>Human result 01</span><small>video / 3D viewer</small></div><h3>Cross-identity generation</h3><p class="prompt">“Action prompt”</p></article>
+            <article class="media-card"><div class="media-placeholder"><span>Human result 02</span><small>video / 3D viewer</small></div><h3>Articulated motion</h3><p class="prompt">“Action prompt”</p></article>
+            <article class="media-card"><div class="media-placeholder"><span>Human result 03</span><small>video / 3D viewer</small></div><h3>Morphology conditioning</h3><p class="prompt">“Action prompt”</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="method" aria-labelledby="method-title">
+      <div class="shell shell-wide">
+        <div class="section-heading">
+          <div><div class="section-kicker">Methodology</div><h2 id="method-title">A synchronized spectral motion space</h2></div>
+          <p>Mesh-dependent coordinates are aligned before generative modeling and decoded back on the supplied vertices.</p>
+        </div>
+        <div class="pipeline-placeholder" role="img" aria-label="Placeholder for the SpectralWeave method pipeline figure">
+          <div class="pipeline-label">Method pipeline figure</div>
+          <div class="pipeline-flow" aria-hidden="true"><span>Native mesh</span><i>→</i><span>Spectral coefficients</span><i>→</i><span>Identity adapter</span><i>→</i><span>Diffusion</span><i>→</i><span>Native sequence</span></div>
+          <small>Replace with the final paper pipeline.</small>
+        </div>
+        <div class="method-grid">
+          <article><span>01</span><h3>Fixed-size spectral trajectories</h3><p>Surface motion is represented by trajectories of Laplacian coefficients and decoded on native vertices.</p></article>
+          <article><span>02</span><h3>Identity synchronization</h3><p>Bounded invertible adapters and functional-map constraints align independently computed spectral bases.</p></article>
+          <article><span>03</span><h3>Conditional generation</h3><p>Action- and morphology-conditioned diffusion operates under a consistent coordinate convention.</p></article>
+          <article><span>04</span><h3>Native reconstruction</h3><p>Geometry-aware supervision and deterministic refinement preserve local surface structure and connectivity.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark reveal" id="analysis" aria-labelledby="analysis-title">
+      <div class="shell shell-wide">
+        <div class="section-heading light">
+          <div><div class="section-kicker">Evaluation</div><h2 id="analysis-title">Comparison and ablation</h2></div>
+          <p>Structured slots for qualitative comparisons, quantitative metrics, and synchronization ablations.</p>
+        </div>
+        <div class="analysis-grid">
+          <article class="analysis-card"><div class="placeholder-wide"><span>Comparison video grid</span></div><h3>Comparison to prior work</h3><p>Inputs, baselines, and SpectralWeave outputs will be synchronized by action and camera.</p></article>
+          <article class="analysis-card"><div class="placeholder-wide"><span>Ablation figure / table</span></div><h3>Spectral synchronization</h3><p>Reserved for adapter, functional-map, geometry-loss, and refinement ablations.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="citation" aria-labelledby="citation-title">
+      <div class="shell prose-shell">
+        <div class="section-kicker">Reference</div>
+        <h2 id="citation-title">Citation</h2>
+        <p>The final BibTeX entry will be added when the paper record is available.</p>
+        <div class="code-block">
+          <button class="copy-button" type="button" data-copy-bibtex>Copy</button>
+          <pre><code id="bibtex">@article{spectralweave,
+  title  = {SpectralWeave},
+  author = {Anonymous},
+  note   = {Paper details forthcoming}
+}</code></pre>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <div><strong>SpectralWeave</strong><span>Native 4D mesh generation</span></div>
+      <p>Anonymous academic project page</p>
+    </div>
+  </footer>
 </body>
 </html>

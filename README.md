@@ -1,23 +1,16 @@
-# SpectralWeave
+# SpectralWeave Project Page
 
-Project page maintained by `anoymouscell`.
+Anonymous project-page scaffold for **SpectralWeave**.
 
-Intended site URL: https://anoymouscell.github.io/spectralweave/
+Site: https://anoymouscell.github.io/spectralweave/
 
-The initial page contains only the project name and account name. Add approved project materials to `index.html`.
+## Structure
 
-GitHub Pages should publish from the `main` branch, `/` (root).
+- `index.html` — semantic page structure and current abstract
+- `styles.css` — responsive academic-project styling
+- `script.js` — navigation, result tabs, reveal effects, and citation copy
+- `assets/` — teaser and future media assets
 
-## Commit identity
-
-Use these repository-local settings after cloning:
-
-```sh
-git config user.name anoymouscell
-git config user.email 325942126+anoymouscell@users.noreply.github.com
-git config user.useConfigOnly true
-git config core.hooksPath .githooks
-git config commit.gpgsign false
-```
-
-The local pre-commit and pre-push hooks check author and committer identities. Pushes require GitHub authentication as `anoymouscell`.
+The current version intentionally uses `Anonymous` for authorship and contains
+explicit placeholders for the paper, code, videos, method figure, comparisons,
+ablations, and final BibTeX entry.
