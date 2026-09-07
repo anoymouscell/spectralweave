@@ -13,11 +13,13 @@ Anonymous project page: https://anoymouscell.github.io/spectralweave/
 
 The page uses static HTML, CSS, and JavaScript. No build step or remote runtime dependency is required. For local preview, run `python -m http.server 8765` from this directory.
 
+The page applies a default 75% content scale through the root `zoom` rule in `styles.css`. This is applied on every fresh load or refresh, without storing a previous page scale. Browser toolbar zoom is a separate browser setting.
+
 ## Adding materials
 
 ### Opening case carousel
 
-The `#showcase` carousel sits below the paper header and directly before the abstract. It contains four independent, looping cases, with circular previous/next controls, direct selection dots, a case counter, keyboard navigation (Left/Right, Home/End) and touch swipes. Navigation wraps in both directions. Reduced-motion preferences disable slide transitions and automatic video playback.
+The `#showcase` carousel sits below the paper header and directly before the abstract. It contains four independent, looping cases, with circular previous/next controls, direct selection dots, a case counter, keyboard navigation (Left/Right, Home/End) and touch swipes. Navigation wraps in both directions. The visible case autoplays muted on load and when selected. Reduced-motion preferences disable slide transitions; muted video playback remains automatic, as requested for this page.
 
 The current videos are under `assets/videos/`, referenced by `<video data-src="">` in `#case-01` through `#case-04`:
 
@@ -28,7 +30,7 @@ The current videos are under `assets/videos/`, referenced by `<video data-src=""
 | 03 | `assets/videos/SpectralWeave_03_AAA.mp4` |
 | 04 | `assets/videos/SpectralWeave_04_HHA.mp4` |
 
-Leave `data-src` empty until each file is ready; this shows an honest placeholder and avoids requests for nonexistent videos. The script loads a case on first selection, reveals its player when metadata is ready, and plays only the current video while the carousel is in view. Native controls allow pausing or seeking, including when reduced motion disables automatic playback. Offscreen cases pause, and videos retain their full frame with `object-fit: contain`. Update each video's accessible label to describe the actual case and add subtitles if the video contains speech.
+Leave `data-src` empty until each file is ready; this shows an honest placeholder and avoids requests for nonexistent videos. The script loads a case on first selection, reveals its player when metadata is ready, and plays only the current video while the carousel is in view. Native controls allow pausing or seeking. Offscreen cases pause, and videos retain their full frame with `object-fit: contain`. Update each video's accessible label to describe the actual case and add subtitles if the video contains speech.
 
 ### Comparison results
 

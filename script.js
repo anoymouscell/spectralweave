@@ -14,7 +14,7 @@ if (showcase) {
   let gesture = null;
 
   function playCurrent() {
-    if (!inView || document.hidden || reducedMotion.matches) return;
+    if (!inView || document.hidden) return;
     const video = videos[current];
     if (video.getAttribute('src') && !video.error) video.play().catch(() => {});
   }
@@ -73,16 +73,20 @@ if (showcase) {
   }
 
   videos.forEach((video, index) => {
+    video.defaultMuted = true;
+    video.muted = true;
+    video.autoplay = true;
     video.loop = true;
     // Keep the visible case repeating if a browser still emits an ended event.
     video.addEventListener('ended', () => {
-      if (index !== current || !inView || document.hidden || reducedMotion.matches || video.error) return;
+      if (index !== current || !inView || document.hidden || video.error) return;
       video.currentTime = 0;
       playCurrent();
     });
     video.addEventListener('loadedmetadata', () => {
       video.hidden = false;
       slides[index].querySelector('.case-placeholder').hidden = true;
+      if (index === current) playCurrent();
     });
     video.addEventListener('error', () => {
       video.hidden = true;
@@ -139,7 +143,6 @@ if (showcase) {
   reducedMotion.addEventListener('change', () => {
     if (reducedMotion.matches) {
       ++transitionId;
-      videos.forEach(video => video.pause());
       slides.forEach((slide, index) => {
         slide.getAnimations().forEach(animation => animation.cancel());
         slide.hidden = index !== current;
