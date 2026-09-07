@@ -33,8 +33,7 @@
   background: #fff;
 }
 * { box-sizing: border-box; }
-/* Apply the default page scale on every load, before the first render. */
-html { scroll-behavior: smooth; zoom: 75%; }
+html { scroll-behavior: smooth; }
 body { margin: 0; font-size: 17px; line-height: 1.65; }
 img { display: block; max-width: 100%; height: auto; }
 a { color: #298582; text-underline-offset: 3px; }
@@ -43,15 +42,16 @@ button { font: inherit; cursor: pointer; }
 svg { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 ::selection { background: #d9efec; color: #283e3c; }
 :focus-visible { outline: 2px solid var(--teal); outline-offset: 5px; }
-.container { width: min(1100px, calc(100% - 48px)); margin-inline: auto; }
-.reading-width { width: min(840px, calc(100% - 48px)); margin-inline: auto; }
+/* Occupy 75% of the page width at normal text and UI scale. */
+.container { width: 75%; margin-inline: auto; }
+.reading-width { width: min(840px, 75%); margin-inline: auto; }
 .skip-link { position: absolute; left: 16px; top: -100px; z-index: 10; padding: 8px 16px; background: white; }
 .skip-link:focus { top: 12px; }
 .paper-header { padding-top: 64px; text-align: center; }
 h1, h2, h3, p, figure { margin: 0; }
 h1, h2, h3 { font-weight: 700; }
 h1 {
-  max-width: 1080px;
+  max-width: 100%;
   margin-inline: auto;
   font-size: 48px;
   line-height: 1.16;
@@ -190,6 +190,7 @@ h3 { font-size: 20px; line-height: 1.35; color: var(--rose); }
 .close-dialog { position: absolute; right: 16px; top: 11px; border: none; background: #f3f3f3; color: #444; padding: 3px 12px; font-size: 15px; }
 .dialog-open { overflow: hidden; }
 @media (max-width: 800px) {
+  .container, .reading-width { width: calc(100% - 48px); }
   .paper-header { padding-top: 42px; }
   h1 { font-size: 39px; letter-spacing: -1px; }
   .teaser figcaption { font-size: 17px; }

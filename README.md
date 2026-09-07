@@ -13,7 +13,7 @@ Anonymous project page: https://anoymouscell.github.io/spectralweave/
 
 The page uses static HTML, CSS, and JavaScript. No build step or remote runtime dependency is required. For local preview, run `python -m http.server 8765` from this directory.
 
-The page applies a default 75% content scale through the root `zoom` rule in `styles.css`. This is applied on every fresh load or refresh, without storing a previous page scale. Browser toolbar zoom is a separate browser setting.
+At desktop widths, the main layout and video carousel occupy 75% of the available page width, centered with equal side margins. Typography and controls remain at their normal scale; no CSS zoom is applied. Prose keeps a comfortable reading width. Screens up to 800px use smaller side margins to keep content readable. This responsive layout applies on every load and refresh.
 
 ## Adding materials
 
