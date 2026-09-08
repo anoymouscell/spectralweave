@@ -27,8 +27,8 @@
   --accent-hover: #877223;
   --accent-soft: #eef1e4;
   --accent-border: #cbd4b0;
-  --gold: #aa8a2e;
-  --title-gradient: linear-gradient(110deg, #aa8a2e 4%, #89953d 44%, #48745a 100%);
+  --gold: #c4a126;
+  --title-gradient: linear-gradient(110deg, #c4a126 4%, #89953d 44%, #48745a 100%);
   --heading-gradient: var(--title-gradient);
   font-family: Avenir, "Segoe UI", sans-serif;
   font-synthesis: none;
