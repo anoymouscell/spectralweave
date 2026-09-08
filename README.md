@@ -7,13 +7,15 @@ Anonymous project page: https://anoymouscell.github.io/spectralweave/
 - `index.html`: paper title, four-case video carousel, original abstract, method schematic, and release sections.
 - `styles.css`: responsive layout, typography, and color palette.
 - `script.js`: case navigation and video playback management.
+- `comparisons-data.js`: method names and all comparison media paths, organized by setting, set, and example.
+- `comparisons.js`: comparison tables, independent set tabs, and media loading/playback.
 - `assets/`: the supplied paper teaser and spectral icon.
 - `vendor/`: retained reference styles and locally served Avenir fonts.
 - `TEMPLATE_SOURCES.md`: reference template attribution.
 
 The page uses static HTML, CSS, and JavaScript. No build step or remote runtime dependency is required. For local preview, run `python -m http.server 8765` from this directory.
 
-The page retains its original responsive layout, with a maximum content width of 1100px and a prose width of 840px. It applies no CSS zoom. Browser page zoom (such as 75% in the browser menu) is controlled by the browser, not the website; the page cannot force that setting on refresh. In Chrome, set the site's zoom in the browser menu to save it for subsequent visits and refreshes. See [Chrome's zoom settings](https://support.google.com/chrome/answer/96810?co=GENIE.Platform%3DDesktop&hl=en).
+The header and method retain their original responsive layout, with a maximum content width of 1100px and a prose width of 840px. Comparison tables use up to 1480px to accommodate all methods, with horizontal scrolling on smaller screens. The page applies no CSS zoom. Browser page zoom (such as 75% in the browser menu) is controlled by the browser, not the website; the page cannot force that setting on refresh. In Chrome, set the site's zoom in the browser menu to save it for subsequent visits and refreshes. See [Chrome's zoom settings](https://support.google.com/chrome/answer/96810?co=GENIE.Platform%3DDesktop&hl=en).
 
 ## Adding materials
 
@@ -39,7 +41,30 @@ Replace the release labels with links when the paper, research code, video, and 
 - `#test-comparisons`: comparisons on the test set; every test identity is unseen during training.
 - `#image-to-3d-comparisons`: comparisons using 3D meshes generated from input images.
 
-Mix human and animal examples within each setting; do not split results by domain. Each setting provides a full-width `.comparison-media` area. Replace its `.comparison-placeholder` paragraph with one or more `<figure>` elements containing the actual comparison videos and captions. Use native `<video controls playsinline preload="metadata">`, supply the media's real `width` and `height`, and include a fallback download link. Captions should identify the input/action and the methods in display order. No video is loaded until actual media is provided.
+Mix human and animal examples within each setting; do not split results by domain. Both settings have independent **Set 1 / Set 2 / Set 3** tabs, each containing four examples. The column order is:
+
+| Setting | Columns | Media per set |
+| --- | --- | --- |
+| Unseen test identities | Input Mesh, Method 1–5, Ours | 4 × 7 videos |
+| Image-to-3D meshes | Input Image, Input Mesh, Method 1–5, Ours | 4 images + 4 × 7 videos |
+
+Edit **`comparisons-data.js`** to add the materials. Change the five method `label` values at the top once to update both sections; keep their `key` values unchanged. Each section contains three `sets`, each with four row objects. In a row, replace empty strings with paths relative to `index.html`:
+
+```js
+{
+  "label": "Example 01: walking",
+  "input_image": "assets/comparisons/image-to-3d/set-1/example-01/input.png",
+  "input_mesh": "assets/comparisons/image-to-3d/set-1/example-01/input-mesh.mp4",
+  "method_1": "assets/comparisons/image-to-3d/set-1/example-01/method-1.mp4",
+  "method_2": "",
+  "method_3": "",
+  "method_4": "",
+  "method_5": "",
+  "ours": "assets/comparisons/image-to-3d/set-1/example-01/ours.mp4"
+}
+```
+
+`input_image` is only used in the Image-to-3D setting. Update each row's `label` to describe the input/action for accessible media labels. Empty paths leave reserved square slots and make no media requests. No sample comparison results are published. Supplied images and videos retain their full frame with `object-fit: contain`. Videos autoplay muted and loop when the selected comparison set is in view, with native playback controls. Switching sets or leaving the section pauses those videos; inactive sets load only when selected and visible. The original four-case opening carousel is independent of these tables.
 
 The static teaser is no longer displayed on the page; its asset is retained for the social preview. Teal, blue, rose and ochre from the teaser inform the gradient headings. The method visualization is a schematic based on the abstract.
 
