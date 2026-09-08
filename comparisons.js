@@ -90,7 +90,9 @@ comparisonData.sections.forEach(config => {
       const th = element('th', column.key === 'ours' ? 'ours-heading' : '');
       th.scope = 'col';
       th.setAttribute('role', 'columnheader');
-      th.append(element('span', '', column.label));
+      const oursName = column.key === 'ours' && column.label.match(/^(.*?)\s+\(Ours\)$/);
+      th.append(element('span', 'method-name', oursName ? oursName[1] : column.label));
+      if (oursName) th.append(element('span', 'method-tag', '(Ours)'));
       headings.append(th);
     });
     head.append(headings);
@@ -112,7 +114,10 @@ comparisonData.sections.forEach(config => {
         const descriptionId = `${panelId}-action-${rowIndex + 1}`;
         const actionRow = element('tr', 'comparison-action-row');
         actionRow.setAttribute('role', 'row');
-        const actionCell = element('td', 'comparison-action-text', description);
+        const actionCell = element('td', 'comparison-action-text');
+        const actionIndex = element('span', 'action-index', String(rowIndex + 1).padStart(2, '0'));
+        actionIndex.setAttribute('aria-hidden', 'true');
+        actionCell.append(actionIndex, element('span', 'action-copy', description));
         actionCell.id = descriptionId;
         actionCell.colSpan = columns.length;
         actionCell.setAttribute('role', 'cell');

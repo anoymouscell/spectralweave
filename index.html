@@ -16,13 +16,24 @@
   <link rel="icon" href="assets/favicon.svg?v=restored-soft-green-v20" type="image/svg+xml">
   <link rel="preload" href="vendor/morphany3d/fonts/regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="vendor/morphany3d/fonts/bold.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=comparison-action-text-v23">
+  <link rel="stylesheet" href="styles.css?v=academic-polish-v24">
   <script src="script.js?v=muted-autoplay-v11" defer></script>
   <script src="comparisons-data.js?v=both-comparisons-action-text-v8" defer></script>
-  <script src="comparisons.js?v=both-row-action-text-v18" defer></script>
+  <script src="comparisons.js?v=refined-comparison-details-v19" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="paper-nav" aria-label="Page sections">
+    <div class="container paper-nav-inner">
+      <a class="nav-brand" href="#top" aria-label="SpectralWeave, back to top"><img src="assets/icons/spectral-weave.svg" width="26" height="26" alt=""><span>SpectralWeave</span></a>
+      <div class="section-links">
+        <a href="#showcase">Overview</a>
+        <a href="#abstract">Abstract</a>
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+      </div>
+    </div>
+  </nav>
   <main id="main">
     <header class="paper-header container" id="top">
       <h1 id="title"><span class="project-name">SpectralWeave:</span> Aligning Spectral Coordinates for Native 4D Mesh Generation</h1>
@@ -60,10 +71,10 @@
       <div class="case-navigation" hidden>
         <p class="case-counter" aria-hidden="true"><span id="case-current">01</span><span class="case-divider">/</span>04</p>
         <div class="case-dots" role="group" aria-label="Choose a case">
-          <button type="button" class="case-dot" aria-label="Show case 01" aria-controls="case-01" aria-pressed="true"><span></span></button>
-          <button type="button" class="case-dot" aria-label="Show case 02" aria-controls="case-02" aria-pressed="false"><span></span></button>
-          <button type="button" class="case-dot" aria-label="Show case 03" aria-controls="case-03" aria-pressed="false"><span></span></button>
-          <button type="button" class="case-dot" aria-label="Show case 04" aria-controls="case-04" aria-pressed="false"><span></span></button>
+          <button type="button" class="case-dot" aria-label="Show case 01" aria-controls="case-01" aria-pressed="true"><span aria-hidden="true">01</span></button>
+          <button type="button" class="case-dot" aria-label="Show case 02" aria-controls="case-02" aria-pressed="false"><span aria-hidden="true">02</span></button>
+          <button type="button" class="case-dot" aria-label="Show case 03" aria-controls="case-03" aria-pressed="false"><span aria-hidden="true">03</span></button>
+          <button type="button" class="case-dot" aria-label="Show case 04" aria-controls="case-04" aria-pressed="false"><span aria-hidden="true">04</span></button>
         </div>
         <span class="case-nav-label">Generation examples</span>
       </div>
@@ -72,7 +83,7 @@
 
     <section class="abstract-section paper-section" id="abstract" aria-labelledby="abstract-title">
       <div class="container">
-        <h2 id="abstract-title">Abstract</h2>
+        <h2 id="abstract-title"><img class="paper-icon heading-icon" src="assets/icons/document.svg" width="32" height="32" alt="" aria-hidden="true">Abstract</h2>
         <div class="abstract-copy"><p>Native 4D mesh generation directly animates a supplied, unrigged mesh from a semantic action condition while preserving its native topology. We introduce <strong>SpectralWeave</strong>, to our knowledge, the first spectral generative framework for this challenging task across <em>independently</em> meshed identities. It models surface motion as trajectories of Laplacian coefficients, providing a fixed-size learning space and direct decoding on the supplied vertices without a learned mesh autoencoder. The key difficulty is that independently computed bases assign different coordinate axes to corresponding deformations, making their coefficients incompatible. Bounded, invertible identity adapters constrained by pairwise functional maps align these coefficients while preserving each reconstruction subspace. This factors mesh-dependent coordinate variation out of the generative task, allowing action- and morphology-conditioned diffusion to model mesh trajectories under a consistent coordinate convention. The target adapter and native basis decode generated trajectories into <strong>topology-preserving mesh sequences</strong>, while geometry-aware supervision and deterministic refinement preserve local surface structure. Experiments in separate animal and human domains demonstrate coherent generation on new identities without their motion data, while ablations show that <strong>spectral synchronization</strong> improves cross-identity generalization.</p></div>
       </div>
     </section>
@@ -84,7 +95,7 @@
         <a class="method-image-link" href="assets/spectralweave-pipeline.png" target="_blank" rel="noopener" aria-label="View the full-resolution SpectralWeave pipeline image (opens in a new tab)">
           <img class="method-image" src="assets/spectralweave-pipeline.png" width="3243" height="1740" loading="lazy" decoding="async" alt="SpectralWeave pipeline. Shared coordinate construction uses spectral matching and identity-graph synchronization to align native bases. Morphology and action text condition diffusion, followed by native spectral decoding, Graph-DQS, and boundary-aware ARAP to produce a native-topology 4D sequence.">
         </a>
-        <figcaption><strong>Pipeline overview.</strong> Identity adapters, constrained by pairwise functional maps, align independently computed spectral bases. Conditional diffusion generates coefficient trajectories; the target adapter and native basis decode the motion onto the original vertices.</figcaption>
+        <figcaption><p><strong>Pipeline overview.</strong> Identity adapters, constrained by pairwise functional maps, align independently computed spectral bases. Conditional diffusion generates coefficient trajectories; the target adapter and native basis decode the motion onto the original vertices.</p><a class="figure-full-size" href="assets/spectralweave-pipeline.png" target="_blank" rel="noopener" aria-label="View the pipeline at full resolution (opens in a new tab)"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 3H3v4m10-4h4v4M3 13v4h4m10-4v4h-4M7 7l-4-4m10 4 4-4M7 13l-4 4m10-4 4 4"/></svg>Full resolution</a></figcaption>
       </figure>
     </section>
 
@@ -93,18 +104,18 @@
       <p class="section-intro">Video comparisons on 3D meshes generated from images and on unseen test identities.</p>
       <section class="comparison-section" id="image-to-3d-comparisons" aria-labelledby="image-to-3d-comparisons-title">
         <div class="comparison-heading">
-          <h3 id="image-to-3d-comparisons-title">A. Comparisons on Image-to-3D Meshes</h3>
+          <h3 id="image-to-3d-comparisons-title"><span class="section-letter">A.</span> <span class="comparison-title-text">Comparisons on Image-to-3D Meshes</span></h3>
           <div class="comparison-tabs" role="tablist" aria-label="Image-to-3D comparison sets"></div>
         </div>
         <p class="comparison-description">Comparisons using 3D meshes generated from input images. Input Mesh shows the actual simplified input rotating with surface-normal colors. Generated motion is transferred to the original colored surfaces. All six methods are rendered on white with a shared scale and viewing direction within each row.</p>
-        <details class="comparison-description"><summary>Video and method settings</summary>Clips retain their delivered frame counts and playback rates. Each row uses one fixed orthographic scale, viewing direction, and lighting setup for all methods. A common translation-only camera rule keeps large movements inside the frame; no per-frame scaling or rotation is applied, and original motion and deformation are preserved. TapMo uses the fixed initial-root rotation correction. BiMotion uses paired conditional/empty CFG and a presentation rate of 10 fps. ActionMesh is mesh-conditioned and uses an external text-to-video front end (Stable Diffusion, AnimateDiff, and IP-Adapter). Ours case 006 excludes the previously identified opening deformation frames (native frames 0–2).</details>
+        <details class="comparison-description method-settings"><summary><svg class="settings-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5h3m4 0h7M3 10h8m4 0h2M3 15h3m4 0h7"/><circle cx="8" cy="5" r="2"/><circle cx="13" cy="10" r="2"/><circle cx="8" cy="15" r="2"/></svg>Video and method settings<svg class="settings-chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m6 8 4 4 4-4"/></svg></summary><div class="settings-copy">Clips retain their delivered frame counts and playback rates. Each row uses one fixed orthographic scale, viewing direction, and lighting setup for all methods. A common translation-only camera rule keeps large movements inside the frame; no per-frame scaling or rotation is applied, and original motion and deformation are preserved. TapMo uses the fixed initial-root rotation correction. BiMotion uses paired conditional/empty CFG and a presentation rate of 10 fps. ActionMesh is mesh-conditioned and uses an external text-to-video front end (Stable Diffusion, AnimateDiff, and IP-Adapter). Ours case 006 excludes the previously identified opening deformation frames (native frames 0–2).</div></details>
         <p class="comparison-scroll-hint">Scroll horizontally to compare all methods <span aria-hidden="true">↔</span></p>
         <div class="comparison-media"></div>
         <noscript><p>Enable JavaScript to view the comparison sets.</p></noscript>
       </section>
       <section class="comparison-section" id="test-comparisons" aria-labelledby="test-comparisons-title">
         <div class="comparison-heading">
-          <h3 id="test-comparisons-title">B. Comparisons on Unseen Test Identities</h3>
+          <h3 id="test-comparisons-title"><span class="section-letter">B.</span> <span class="comparison-title-text">Comparisons on Unseen Test Identities</span></h3>
           <div class="comparison-tabs" role="tablist" aria-label="Unseen test identity sets"></div>
         </div>
         <p class="comparison-description">Comparisons on the test set. <strong>All test identities are unseen during training.</strong></p>
@@ -116,13 +127,13 @@
     </section>
 
     <section class="paper-section container resources-section" id="resources" aria-labelledby="resources-title">
-      <h2 id="resources-title">Resources</h2>
+      <h2 id="resources-title"><img class="paper-icon heading-icon" src="assets/icons/library.svg" width="32" height="32" alt="" aria-hidden="true">Resources</h2>
       <p>The paper, research code, video and citation will be available here upon release.</p>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>Page maintained by <a href="https://github.com/anoymouscell">anoymouscell</a>.</p>
+    <div class="container footer-inner"><p>Page maintained by <a href="https://github.com/anoymouscell">anoymouscell</a>.</p><a class="footer-top" href="#top">Back to top<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 16V4m-5 5 5-5 5 5"/></svg></a></div>
   </footer>
 </body>
 </html>
