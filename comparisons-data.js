@@ -168,7 +168,7 @@ const comparisonData = {
             "method_3": "assets/videos/comparisonB_selected12/001/TapMo_unified_white_v6.mp4",
             "method_4": "assets/videos/comparisonB_selected12/001/BiMotion_unified_white_v6.mp4",
             "method_5": "assets/videos/comparisonB_selected12/001/ActionMesh_unified_white_v6.mp4",
-            "ours": "assets/videos/comparisonB_selected12/001/Ours_unified_white_v6.mp4"
+            "ours": "assets/videos/comparisonB_selected12/001/Ours_unified_white_trim3_v7.mp4"
           },
           {
             "label": "005 | 黑狗 | a human is performing one foot kick ball",

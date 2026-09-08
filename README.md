@@ -88,6 +88,8 @@ The static teaser is no longer displayed on the page; its asset is retained for 
 
 Case 006 (the humanoid raccoon, a20) keeps the approved trim in `Ours_unified_white_v6.mp4`: it starts at zero-based native frame 3, matching the previously approved hero prefix removal. Frames 3–44 are retained at the unchanged 10fps (42 frames / 4.2s). Case 009 (`raccoon_4`, drink) is not trimmed. See `../runs/comparison_generation_selected12_v1/raccoon_trim_v3.json`.
 
+Case 001 (Sun Wukong, Comparison A / Set 1 / row 1) now restores the same previously approved start at native frame 3 using `Ours_unified_white_trim3_v7.mp4`. Native frames 0–2 are removed; frames 3–44 play once at 10fps (42 frames / 4.2s). Camera, scale, white background, and the remaining poses are unchanged from the unified v6 render. The original v6 video is retained. See `../runs/comparison_generation_selected12_v1/unified_white_v6/case001_trim3_v7_validation.json` for source/output hashes and full-frame validation.
+
 ## Anonymous publishing
 
 Keep the author byline anonymous. Use the following repository-local identity before committing:
