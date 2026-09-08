@@ -4,7 +4,7 @@ Anonymous project page: https://anoymouscell.github.io/spectralweave/
 
 ## Page structure
 
-- `index.html`: paper title, four-case video carousel, original abstract, method schematic, and release sections.
+- `index.html`: paper title, four-case video carousel, original abstract, supplied pipeline figure, and release sections.
 - `styles.css`: responsive layout, typography, and color palette.
 - `script.js`: case navigation and video playback management.
 - `comparisons-data.js`: method names and all comparison media paths, organized by setting, set, and example.
@@ -66,7 +66,7 @@ Edit **`comparisons-data.js`** to add the materials. Change the five method `lab
 
 `input_image` is only used in the Image-to-3D setting. Update each row's `label` to describe the input/action for accessible media labels. Empty paths leave reserved square slots and make no media requests. No sample comparison results are published. Supplied images and videos retain their full frame with `object-fit: contain`. Videos autoplay muted and loop when the selected comparison set is in view, with native playback controls. Switching sets or leaving the section pauses those videos; inactive sets load only when selected and visible. The original four-case opening carousel is independent of these tables.
 
-The static teaser is no longer displayed on the page; its asset is retained for the social preview. Teal, blue, rose and ochre from the teaser inform the gradient headings. The method visualization is a schematic based on the abstract.
+The static teaser is no longer displayed on the page; its asset is retained for the social preview. Teal, blue, rose and ochre from the teaser inform the gradient headings. The Method section displays the project owner's original 3243 × 1740 PNG at `assets/spectralweave-pipeline.png`, with no image resizing or recompression. It fills the shared container while preserving its aspect ratio. Clicking the figure opens the full-resolution image in a new tab.
 
 ## Anonymous publishing
 

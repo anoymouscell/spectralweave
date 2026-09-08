@@ -147,6 +147,8 @@ h3 { font-size: 20px; line-height: 1.35; color: var(--rose); }
 .method-section { padding-top: 56px; }
 .method-section h2 { --heading-gradient: linear-gradient(100deg, #259c99, #468dc4 55%, #b964a0); }
 .method-figure { margin-top: 34px; }
+.method-image-link { display: block; cursor: zoom-in; }
+.method-image { width: 100%; height: auto; }
 .method-flow { display: grid; grid-template-columns: 1fr 24px 1fr 24px 1fr 24px 1fr; align-items: start; gap: 5px; }
 .flow-node { min-width: 0; text-align: center; --node-start: #259c99; --node-end: #428dc3; }
 .flow-node:nth-of-type(2) { --node-start: #428dc3; --node-end: #b964a0; }
