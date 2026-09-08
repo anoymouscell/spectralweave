@@ -38,17 +38,17 @@ Leave `data-src` empty until each file is ready; this shows an honest placeholde
 
 Replace the release labels with links when the paper, research code, video, and citation are available. The Results section has two comparison settings:
 
-- `#test-comparisons`: comparisons on the test set; every test identity is unseen during training.
-- `#image-to-3d-comparisons`: comparisons using 3D meshes generated from input images.
+- A. `#image-to-3d-comparisons`: comparisons using 3D meshes generated from input images.
+- B. `#test-comparisons`: comparisons on the test set; every test identity is unseen during training.
 
-Mix human and animal examples within each setting; do not split results by domain. Comparison A now has **Set 1 / Set 2**, each with four selected examples. Comparison B retains its independent **Set 1 / Set 2 / Set 3** reserved sets. The column order is:
+Mix human and animal examples within each setting; do not split results by domain. Comparison A appears first with **Set 1 / Set 2 / Set 3** reserved sets. Comparison B has **Set 1 / Set 2**, each with four selected examples. The column order is:
 
 | Setting | Columns | Media per set |
 | --- | --- | --- |
 | Unseen test identities | Input Mesh, Method 1–5, Ours | 4 × 7 videos |
 | Image-to-3D meshes | Input Image, Input Mesh, Method 1–5, Ours | 4 images + 4 × 7 videos |
 
-Edit **`comparisons-data.js`** to add the materials. Top-level method labels remain the defaults. A section can override them using its own `methods` array; comparison A does so, leaving B's labels and data unchanged. Keep method keys unchanged. Each set contains four row objects. In a row, replace empty strings with paths relative to `index.html`:
+Edit **`comparisons-data.js`** to add the materials. Top-level method labels remain the defaults. A section can override them using its own `methods` array; comparison B does so, leaving A's labels and data unchanged. Keep method keys unchanged. Each set contains four row objects. In a row, replace empty strings with paths relative to `index.html`:
 
 ```js
 {
@@ -64,9 +64,9 @@ Edit **`comparisons-data.js`** to add the materials. Top-level method labels rem
 }
 ```
 
-`input_image` is only used in the Image-to-3D setting. Update each row's `label` to describe the input/action for accessible media labels. Empty paths leave reserved square slots and make no media requests. Comparison A is populated locally; comparison B remains reserved. Supplied images and videos retain their full frame with `object-fit: contain`. Videos autoplay muted and loop when the selected comparison set is in view, with native playback controls. Switching sets or leaving the section pauses those videos; inactive sets load only when selected and visible. The original four-case opening carousel is independent of these tables.
+`input_image` is only used in the Image-to-3D setting. Update each row's `label` to describe the input/action for accessible media labels. Empty paths leave reserved square slots and make no media requests. Comparison A remains reserved; comparison B is populated. Supplied images and videos retain their full frame with `object-fit: contain`. Videos autoplay muted and loop when the selected comparison set is in view, with native playback controls. Switching sets or leaving the section pauses those videos; inactive sets load only when selected and visible. The original four-case opening carousel is independent of these tables.
 
-Comparison A assets are in `assets/videos/comparisonA/`: 48 independent method clips
+Comparison B assets retain their existing folder, `assets/videos/comparisonA/`: 48 independent method clips
 (512 × 512, 15 fps, 3 seconds) and six unique rotating input meshes reused in eight
 rows (512 × 512, 30 fps, 6 seconds per full turn). Inputs are the actual simplified
 static driver meshes, checked against each selected method's input vertices/faces;
