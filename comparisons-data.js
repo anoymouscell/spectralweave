@@ -1,6 +1,4 @@
-// Edit method labels here; keep their keys unchanged.
-// Each set contains four rows. Fill empty strings with relative video/image paths.
-// Empty paths render reserved slots without requesting nonexistent files.
+// Comparison A preserved; B selected12 input images, static inputs and Ours.
 const comparisonData = {
   "methods": [
     {
@@ -151,142 +149,168 @@ const comparisonData = {
       "sets": [
         [
           {
-            "label": "Example 01",
-            "input_image": "",
-            "input_mesh": "",
+            "label": "001 | 孙悟空 | a human is performing kick up spin and run",
+            "input_image": "assets/videos/comparisonB_selected12/001/input.png",
+            "input_mesh": "assets/videos/comparisonB_selected12/001/input_mesh.mp4",
             "method_1": "",
             "method_2": "",
             "method_3": "",
             "method_4": "",
             "method_5": "",
-            "ours": ""
+            "ours": "assets/videos/comparisonB_selected12/001/ours.mp4"
           },
           {
-            "label": "Example 02",
-            "input_image": "",
-            "input_mesh": "",
+            "label": "002 | 大象 | a human is performing bent knee walk forward upper body sway",
+            "input_image": "assets/videos/comparisonB_selected12/002/input.png",
+            "input_mesh": "assets/videos/comparisonB_selected12/002/input_mesh.mp4",
             "method_1": "",
             "method_2": "",
             "method_3": "",
             "method_4": "",
             "method_5": "",
-            "ours": ""
+            "ours": "assets/videos/comparisonB_selected12/002/ours.mp4"
           },
           {
-            "label": "Example 03",
-            "input_image": "",
-            "input_mesh": "",
+            "label": "003 | robot | a human is performing jump rope in place",
+            "input_image": "assets/videos/comparisonB_selected12/003/input.png",
+            "input_mesh": "assets/videos/comparisonB_selected12/003/input_mesh.mp4",
             "method_1": "",
             "method_2": "",
             "method_3": "",
             "method_4": "",
             "method_5": "",
-            "ours": ""
+            "ours": "assets/videos/comparisonB_selected12/003/ours.mp4"
           },
           {
-            "label": "Example 04",
-            "input_image": "",
-            "input_mesh": "",
+            "label": "004 | 兔子 | a human is performing jump once step back gun pose",
+            "input_image": "assets/videos/comparisonB_selected12/004/input.png",
+            "input_mesh": "assets/videos/comparisonB_selected12/004/input_mesh.mp4",
             "method_1": "",
             "method_2": "",
             "method_3": "",
             "method_4": "",
             "method_5": "",
-            "ours": ""
+            "ours": "assets/videos/comparisonB_selected12/004/ours.mp4"
           }
         ],
         [
           {
-            "label": "Example 01",
-            "input_image": "",
-            "input_mesh": "",
+            "label": "005 | 黑狗 | a human is performing one foot kick ball",
+            "input_image": "assets/videos/comparisonB_selected12/005/input.png",
+            "input_mesh": "assets/videos/comparisonB_selected12/005/input_mesh.mp4",
             "method_1": "",
             "method_2": "",
             "method_3": "",
             "method_4": "",
             "method_5": "",
-            "ours": ""
+            "ours": "assets/videos/comparisonB_selected12/005/ours.mp4"
           },
           {
-            "label": "Example 02",
-            "input_image": "",
-            "input_mesh": "",
+            "label": "006 | 浣熊 | a human is performing same arm leg swing dance step forward back",
+            "input_image": "assets/videos/comparisonB_selected12/006/input.png",
+            "input_mesh": "assets/videos/comparisonB_selected12/006/input_mesh.mp4",
             "method_1": "",
             "method_2": "",
             "method_3": "",
             "method_4": "",
             "method_5": "",
-            "ours": ""
+            "ours": "assets/videos/comparisonB_selected12/006/ours.mp4"
           },
           {
-            "label": "Example 03",
-            "input_image": "",
-            "input_mesh": "",
+            "label": "007 | 紫色 knight | a human is performing spin back sweep kick",
+            "input_image": "assets/videos/comparisonB_selected12/007/input.png",
+            "input_mesh": "assets/videos/comparisonB_selected12/007/input_mesh.mp4",
             "method_1": "",
             "method_2": "",
             "method_3": "",
             "method_4": "",
             "method_5": "",
-            "ours": ""
+            "ours": "assets/videos/comparisonB_selected12/007/ours.mp4"
           },
           {
-            "label": "Example 04",
-            "input_image": "",
-            "input_mesh": "",
+            "label": "008 | 中式衣服女生 | a human is performing drop to crouch hands on floor slide back",
+            "input_image": "assets/videos/comparisonB_selected12/008/input.png",
+            "input_mesh": "assets/videos/comparisonB_selected12/008/input_mesh.mp4",
             "method_1": "",
             "method_2": "",
             "method_3": "",
             "method_4": "",
             "method_5": "",
-            "ours": ""
+            "ours": "assets/videos/comparisonB_selected12/008/ours.mp4"
           }
         ],
         [
           {
-            "label": "Example 01",
-            "input_image": "",
-            "input_mesh": "",
+            "label": "009 | raccoon_4 | an animal performing drink",
+            "input_image": "assets/videos/comparisonB_selected12/009/input.png",
+            "input_mesh": "assets/videos/comparisonB_selected12/009/input_mesh.mp4",
             "method_1": "",
             "method_2": "",
             "method_3": "",
             "method_4": "",
             "method_5": "",
-            "ours": ""
+            "ours": "assets/videos/comparisonB_selected12/009/ours.mp4"
           },
           {
-            "label": "Example 02",
-            "input_image": "",
-            "input_mesh": "",
+            "label": "010 | animal 新批次06 | an animal performing walkforward",
+            "input_image": "assets/videos/comparisonB_selected12/010/input.png",
+            "input_mesh": "assets/videos/comparisonB_selected12/010/input_mesh.mp4",
             "method_1": "",
             "method_2": "",
             "method_3": "",
             "method_4": "",
             "method_5": "",
-            "ours": ""
+            "ours": "assets/videos/comparisonB_selected12/010/ours.mp4"
           },
           {
-            "label": "Example 03",
-            "input_image": "",
-            "input_mesh": "",
+            "label": "011 | cat_12 | an animal performing trotright",
+            "input_image": "assets/videos/comparisonB_selected12/011/input.png",
+            "input_mesh": "assets/videos/comparisonB_selected12/011/input_mesh.mp4",
             "method_1": "",
             "method_2": "",
             "method_3": "",
             "method_4": "",
             "method_5": "",
-            "ours": ""
+            "ours": "assets/videos/comparisonB_selected12/011/ours.mp4"
           },
           {
-            "label": "Example 04",
-            "input_image": "",
-            "input_mesh": "",
+            "label": "012 | animal 新批次05 | an animal performing run forward",
+            "input_image": "assets/videos/comparisonB_selected12/012/input.png",
+            "input_mesh": "assets/videos/comparisonB_selected12/012/input_mesh.mp4",
             "method_1": "",
             "method_2": "",
             "method_3": "",
             "method_4": "",
             "method_5": "",
-            "ours": ""
+            "ours": "assets/videos/comparisonB_selected12/012/ours.mp4"
           }
         ]
+      ],
+      "methods": [
+        {
+          "key": "method_1",
+          "label": "Animate3D"
+        },
+        {
+          "key": "method_2",
+          "label": "AnimateAnyMesh"
+        },
+        {
+          "key": "method_3",
+          "label": "TapMo"
+        },
+        {
+          "key": "method_4",
+          "label": "BiMotion"
+        },
+        {
+          "key": "method_5",
+          "label": "ActionMesh"
+        },
+        {
+          "key": "ours",
+          "label": "SpectralWeave (Ours)"
+        }
       ]
     }
   ]
