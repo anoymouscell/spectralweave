@@ -1,4 +1,4 @@
-/* Academic layout with a warm gold, olive, and sage palette. */
+/* Academic layout with a vivid yellow-to-leaf-green palette. */
 @font-face {
   font-family: Avenir;
   src: url("vendor/morphany3d/fonts/regular.woff2") format("woff2");
@@ -23,12 +23,12 @@
   --page-gutter: 24px;
   --ink: #383838;
   --muted: #707070;
-  --accent: #567048;
+  --accent: #427c35;
   --accent-hover: #877223;
-  --accent-soft: #eef1e4;
-  --accent-border: #cbd4b0;
+  --accent-soft: #eef6df;
+  --accent-border: #c3dc9f;
   --gold: #c4a126;
-  --title-gradient: linear-gradient(110deg, #c4a126 4%, #89953d 44%, #48745a 100%);
+  --title-gradient: linear-gradient(110deg, #c4a126 4%, #9cbe35 44%, #35a45a 100%);
   --heading-gradient: var(--title-gradient);
   font-family: Avenir, "Segoe UI", sans-serif;
   font-synthesis: none;
