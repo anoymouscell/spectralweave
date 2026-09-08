@@ -169,6 +169,8 @@ h3 { font-size: 22px; line-height: 1.35; color: var(--accent); }
 .comparison-table tr { display: grid; grid-template-columns: repeat(var(--columns), minmax(0, 1fr)); column-gap: 10px; }
 .comparison-table th { display: block; min-width: 0; padding: 0 3px 14px; border-bottom: 1px solid #dedfdf; font-size: 20px; font-weight: 600; line-height: 1.4; color: #353c31; overflow-wrap: anywhere; }
 .comparison-table td { display: block; min-width: 0; padding: 0; }
+.comparison-action-row:not(:first-child) { margin-top: 8px; }
+.comparison-table .comparison-action-text { grid-column: 1 / -1; padding: 7px 12px; border-left: 3px solid var(--accent-border); background: #f3f5ef; color: #394635; font-size: 18px; line-height: 1.5; font-style: italic; text-align: left; }
 .comparison-table .ours-heading { color: var(--accent); font-weight: 700; }
 .ours-heading span { background: var(--heading-gradient); background-clip: text; -webkit-background-clip: text; color: transparent; }
 .comparison-slot { aspect-ratio: 1; position: relative; overflow: hidden; border: 1px solid #dedfdf; background: #fff; }

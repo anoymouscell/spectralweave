@@ -16,10 +16,10 @@
   <link rel="icon" href="assets/favicon.svg?v=restored-soft-green-v20" type="image/svg+xml">
   <link rel="preload" href="vendor/morphany3d/fonts/regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="vendor/morphany3d/fonts/bold.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=scholarly-icons-v22">
+  <link rel="stylesheet" href="styles.css?v=comparison-action-text-v23">
   <script src="script.js?v=muted-autoplay-v11" defer></script>
-  <script src="comparisons-data.js?v=generation-selected12-inputs-ours-v1" defer></script>
-  <script src="comparisons.js?v=section-method-labels-v16" defer></script>
+  <script src="comparisons-data.js?v=both-comparisons-action-text-v8" defer></script>
+  <script src="comparisons.js?v=both-row-action-text-v18" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -96,7 +96,8 @@
           <h3 id="image-to-3d-comparisons-title">A. Comparisons on Image-to-3D Meshes</h3>
           <div class="comparison-tabs" role="tablist" aria-label="Image-to-3D comparison sets"></div>
         </div>
-        <p class="comparison-description">Comparisons using 3D meshes generated from input images. Input Mesh shows the actual simplified input rotating with surface-normal colors. Ours shows motion transferred to the original colored surface; baseline videos will be added.</p>
+        <p class="comparison-description">Comparisons using 3D meshes generated from input images. Input Mesh shows the actual simplified input rotating with surface-normal colors. Generated motion is transferred to the original colored surfaces. All six methods are rendered on white with a shared scale and viewing direction within each row.</p>
+        <details class="comparison-description"><summary>Video and method settings</summary>Clips retain their delivered frame counts and playback rates. Each row uses one fixed orthographic scale, viewing direction, and lighting setup for all methods. A common translation-only camera rule keeps large movements inside the frame; no per-frame scaling or rotation is applied, and original motion and deformation are preserved. TapMo uses the fixed initial-root rotation correction. BiMotion uses paired conditional/empty CFG and a presentation rate of 10 fps. ActionMesh is mesh-conditioned and uses an external text-to-video front end (Stable Diffusion, AnimateDiff, and IP-Adapter). Ours case 006 excludes the previously identified opening deformation frames (native frames 0–2).</details>
         <p class="comparison-scroll-hint">Scroll horizontally to compare all methods <span aria-hidden="true">↔</span></p>
         <div class="comparison-media"></div>
         <noscript><p>Enable JavaScript to view the comparison sets.</p></noscript>

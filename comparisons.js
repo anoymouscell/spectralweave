@@ -101,6 +101,25 @@ comparisonData.sections.forEach(config => {
     rows.forEach((row, rowIndex) => {
       const tr = element('tr');
       tr.setAttribute('role', 'row');
+      if (config.showActionText && row.action_text) {
+        const prompt = row.action_text.trim()
+          .replace(/\bwalkforward\b/gi, 'walk forward')
+          .replace(/\btrotright\b/gi, 'trot right')
+          .replace(/\btrotleft\b/gi, 'trot left')
+          .replace(/\s+\d+\s*$/, '');
+        const description = prompt.charAt(0).toUpperCase() + prompt.slice(1)
+          + (/[.!?]$/.test(prompt) ? '' : '.');
+        const descriptionId = `${panelId}-action-${rowIndex + 1}`;
+        const actionRow = element('tr', 'comparison-action-row');
+        actionRow.setAttribute('role', 'row');
+        const actionCell = element('td', 'comparison-action-text', description);
+        actionCell.id = descriptionId;
+        actionCell.colSpan = columns.length;
+        actionCell.setAttribute('role', 'cell');
+        actionRow.append(actionCell);
+        body.append(actionRow);
+        tr.setAttribute('aria-describedby', descriptionId);
+      }
       columns.forEach(column => {
         const label = `${row.label}, ${column.label}`;
         const td = element('td');

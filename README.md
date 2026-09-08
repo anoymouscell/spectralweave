@@ -41,7 +41,7 @@ Replace the release labels with links when the paper, research code, video, and 
 - A. `#image-to-3d-comparisons`: comparisons using 3D meshes generated from input images.
 - B. `#test-comparisons`: comparisons on the test set; every test identity is unseen during training.
 
-Comparison A appears first with **Set 1 / Set 2 / Set 3**, populated with the 12 selected generation cases in manifest order. Each row supplies the source image, rotating simplified input mesh, and Ours; five baseline slots remain empty. Comparison B has **Set 1 / Set 2**, each with four selected examples. The column order is:
+Comparison A appears first with **Set 1 / Set 2 / Set 3**, populated with the 12 selected generation cases. Display order by fixed case ID: Set 1 = 001, 005, 010, 011 (two human, two animal); Set 2 = 002, 004, 007, 012; Set 3 = 003, 006, 008, 009 (both three human, then one animal). See `../runs/comparison_generation_selected12_v1/web_set_order_v4.json`. Case IDs and source paths are unchanged. Each row supplies the source image, rotating simplified input mesh, Animate3D, AnimateAnyMesh, TapMo, BiMotion, ActionMesh, and Ours. Comparison B has **Set 1 / Set 2**, each with four selected examples. The column order is:
 
 | Setting | Columns | Media per set |
 | --- | --- | --- |
@@ -49,6 +49,8 @@ Comparison A appears first with **Set 1 / Set 2 / Set 3**, populated with the 12
 | Image-to-3D meshes | Input Image, Input Mesh, Method 1–5, Ours | 4 images + 4 × 7 videos |
 
 Edit **`comparisons-data.js`** to add the materials. Both sections have their own method labels. Keep method keys unchanged. Each set contains four row objects. In a row, replace empty strings with paths relative to `index.html`:
+
+Both comparison sections enable `showActionText`. Each row's `action_text` stores its original prompt and is displayed above the matching media row, without the case/identity label. Display-only formatting capitalizes the first letter, separates `walkforward`, `trotright`, and `trotleft`, and hides a trailing numeric action-variant suffix (for example, `attack 3` displays as `attack`). Source prompts, media paths, and motion are unchanged by this formatting.
 
 ```js
 {
@@ -64,9 +66,11 @@ Edit **`comparisons-data.js`** to add the materials. Both sections have their ow
 }
 ```
 
-`input_image` is only used in the Image-to-3D setting. Update each row's `label` to describe the input/action for accessible media labels. Empty paths leave reserved square slots and make no media requests. Comparison A has source images, input meshes, and Ours; comparison B is fully populated. Supplied images and videos retain their full frame with `object-fit: contain`. Videos autoplay muted and loop when the selected comparison set is in view, with native playback controls. Switching sets or leaving the section pauses those videos; inactive sets load only when selected and visible. The original four-case opening carousel is independent of these tables.
+`input_image` is only used in the Image-to-3D setting. Update each row's `label` to describe the input/action for accessible media labels. Empty paths leave reserved square slots and make no media requests. Both comparison sections are fully populated. Supplied images and videos retain their full frame with `object-fit: contain`. Videos autoplay muted and loop when the selected comparison set is in view, with native playback controls. Switching sets or leaving the section pauses those videos; inactive sets load only when selected and visible. The original four-case opening carousel is independent of these tables.
 
-Comparison A assets are under `assets/videos/comparisonB_selected12/` (folder name is historical, not the displayed section label). Provenance and checksums: `../runs/comparison_generation_selected12_v1/generation_web_assets.json`. Input images are original model input images, not rendered previews. Static simplified inputs rotate once in 6 seconds (512px, 30fps). Ours retains all 45 original frames at 10fps; only the 56px header is removed and the square image resized to 512px. These clips are not the shortened/speed-adjusted hero edits. The 12-case manifest remains tied to the original v12 video positions, not the later v13 regrouping.
+Comparison A assets are under `assets/videos/comparisonB_selected12/` (folder name is historical, not the displayed section label). Input provenance: `../runs/comparison_generation_selected12_v1/generation_web_assets.json`. Input images are original model input images, not rendered previews. Static simplified inputs rotate once in 6 seconds (512px, 30fps). All 72 current result clips use `<method>_unified_white_v6.mp4`: GPU rendering at 1024px downsampled to 512px, pure white, shared texture and lighting, and one fixed orthographic scale and rotation per row. Humans use Y-up/front +Z with 8-degree elevation; animals use Z-up/front -Y, seen from the -X side with 20-degree obliqueness and 10-degree elevation, so the canonical head faces screen-right. Native-coordinate textured sequences are used, not already display-rotated meshes. TapMo's existing initial-root correction is retained and is not applied twice.
+
+Scale is shared across all methods, based on the static rest extent with a shared maximum-pose-span safety limit. There is no per-method or per-frame zoom. One common translation-only dead-zone camera rule shifts the view only as needed to keep the entire mesh inside 94% of the frame; this changes the presentation of global translation, not the stored geometry, rotation, pose, or timing. Motion/deformation may naturally change the projected silhouette size. Camera centers and exact scales are recorded per clip. Animate3D: 16 frames/10fps; AnimateAnyMesh: 16/10; TapMo: 120/20; BiMotion: 46/10 (presentation rate, including its supplied rest frame); ActionMesh: 16/8; Ours: 45/10 except case 006 below. These clips are not the speed-adjusted hero edits. Render sources, input/texture identity checks, video hashes, full decode results, and browser checks are under `../runs/comparison_generation_selected12_v1/unified_white_v6/`. The 72 videos total approximately 15 MB. Previous assets are retained for rollback but no longer linked. The 12-case manifest remains tied to the original v12 video positions, not the later v13 regrouping.
 
 Comparison B assets retain their existing folder, `assets/videos/comparisonA/`: 48 independent method clips
 (512 × 512, 15 fps, 3 seconds) and six unique rotating input meshes reused in eight
@@ -81,6 +85,8 @@ DT4D 077, Human 136. Source manifests, backup and installation validation are un
 commit or deploy the public site.
 
 The static teaser is no longer displayed on the page; its asset is retained for the social preview. Headings, navigation accents, and the favicon use a warm gold-to-olive-to-sage palette. Desktop typography uses a 52px title, 38px section headings, 19px body text, and 17px figure captions, with smaller responsive sizes on phones. The Method section displays the project owner's original 3243 × 1740 PNG at `assets/spectralweave-pipeline.png`, with no image resizing or recompression. It fills the shared container while preserving its aspect ratio. Clicking the figure opens the full-resolution image in a new tab.
+
+Case 006 (the humanoid raccoon, a20) keeps the approved trim in `Ours_unified_white_v6.mp4`: it starts at zero-based native frame 3, matching the previously approved hero prefix removal. Frames 3–44 are retained at the unchanged 10fps (42 frames / 4.2s). Case 009 (`raccoon_4`, drink) is not trimmed. See `../runs/comparison_generation_selected12_v1/raccoon_trim_v3.json`.
 
 ## Anonymous publishing
 
