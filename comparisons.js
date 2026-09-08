@@ -7,7 +7,7 @@ comparisonData.sections.forEach(config => {
   const columns = [
     ...(config.inputImage ? [{ key: 'input_image', label: 'Input Image', type: 'image' }] : []),
     { key: 'input_mesh', label: 'Input Mesh', type: 'video' },
-    ...comparisonData.methods.map(method => ({ ...method, type: 'video' }))
+    ...(config.methods || comparisonData.methods).map(method => ({ ...method, type: 'video' }))
   ];
   const panels = [];
   const tabs = [];

@@ -41,14 +41,14 @@ Replace the release labels with links when the paper, research code, video, and 
 - `#test-comparisons`: comparisons on the test set; every test identity is unseen during training.
 - `#image-to-3d-comparisons`: comparisons using 3D meshes generated from input images.
 
-Mix human and animal examples within each setting; do not split results by domain. Both settings have independent **Set 1 / Set 2 / Set 3** tabs, each containing four examples. The column order is:
+Mix human and animal examples within each setting; do not split results by domain. Comparison A now has **Set 1 / Set 2**, each with four selected examples. Comparison B retains its independent **Set 1 / Set 2 / Set 3** reserved sets. The column order is:
 
 | Setting | Columns | Media per set |
 | --- | --- | --- |
 | Unseen test identities | Input Mesh, Method 1–5, Ours | 4 × 7 videos |
 | Image-to-3D meshes | Input Image, Input Mesh, Method 1–5, Ours | 4 images + 4 × 7 videos |
 
-Edit **`comparisons-data.js`** to add the materials. Change the five method `label` values at the top once to update both sections; keep their `key` values unchanged. Each section contains three `sets`, each with four row objects. In a row, replace empty strings with paths relative to `index.html`:
+Edit **`comparisons-data.js`** to add the materials. Top-level method labels remain the defaults. A section can override them using its own `methods` array; comparison A does so, leaving B's labels and data unchanged. Keep method keys unchanged. Each set contains four row objects. In a row, replace empty strings with paths relative to `index.html`:
 
 ```js
 {
@@ -64,7 +64,19 @@ Edit **`comparisons-data.js`** to add the materials. Change the five method `lab
 }
 ```
 
-`input_image` is only used in the Image-to-3D setting. Update each row's `label` to describe the input/action for accessible media labels. Empty paths leave reserved square slots and make no media requests. No sample comparison results are published. Supplied images and videos retain their full frame with `object-fit: contain`. Videos autoplay muted and loop when the selected comparison set is in view, with native playback controls. Switching sets or leaving the section pauses those videos; inactive sets load only when selected and visible. The original four-case opening carousel is independent of these tables.
+`input_image` is only used in the Image-to-3D setting. Update each row's `label` to describe the input/action for accessible media labels. Empty paths leave reserved square slots and make no media requests. Comparison A is populated locally; comparison B remains reserved. Supplied images and videos retain their full frame with `object-fit: contain`. Videos autoplay muted and loop when the selected comparison set is in view, with native playback controls. Switching sets or leaving the section pauses those videos; inactive sets load only when selected and visible. The original four-case opening carousel is independent of these tables.
+
+Comparison A assets are in `assets/videos/comparisonA/`: 48 independent method clips
+(512 × 512, 15 fps, 3 seconds) and six unique rotating input meshes reused in eight
+rows (512 × 512, 30 fps, 6 seconds per full turn). Inputs are the actual simplified
+static driver meshes, checked against each selected method's input vertices/faces;
+they are not animation first frames. Normal rendering matches the comparison style.
+Method results show the original-resolution transferred surfaces. TapMo uses the
+rotation-fixed run; Human BiMotion uses the CFG-fixed variant, disclosed on the page.
+Set 1: Human 036, Human 048, DT4D 038, Human 111. Set 2: DT4D 195, DT4D 154,
+DT4D 077, Human 136. Source manifests, backup and installation validation are under
+`../runs/comparison_ori_normal_selected8_v1/`. Updating local files does not itself
+commit or deploy the public site.
 
 The static teaser is no longer displayed on the page; its asset is retained for the social preview. Headings, navigation accents, and the favicon use a warm gold-to-olive-to-sage palette. Desktop typography uses a 52px title, 38px section headings, 19px body text, and 17px figure captions, with smaller responsive sizes on phones. The Method section displays the project owner's original 3243 × 1740 PNG at `assets/spectralweave-pipeline.png`, with no image resizing or recompression. It fills the shared container while preserving its aspect ratio. Clicking the figure opens the full-resolution image in a new tab.
 
