@@ -79,24 +79,32 @@ comparisonData.sections.forEach(config => {
     scroller.setAttribute('role', 'region');
     scroller.setAttribute('aria-label', `Set ${setIndex + 1} comparison table, scroll to see all methods`);
     const table = element('table', `comparison-table${config.inputImage ? ' has-input-image' : ''}`);
+    // Preserve table semantics in browsers when rows use CSS grid for spacing.
+    table.setAttribute('role', 'table');
     table.append(element('caption', 'visually-hidden', `Set ${setIndex + 1}: ${rows.length} examples. ${section.querySelector('h3').textContent}`));
     const head = element('thead');
+    head.setAttribute('role', 'rowgroup');
     const headings = element('tr');
+    headings.setAttribute('role', 'row');
     columns.forEach(column => {
       const th = element('th', column.key === 'ours' ? 'ours-heading' : '');
       th.scope = 'col';
+      th.setAttribute('role', 'columnheader');
       th.append(element('span', '', column.label));
       headings.append(th);
     });
     head.append(headings);
     table.append(head);
     const body = element('tbody');
+    body.setAttribute('role', 'rowgroup');
 
     rows.forEach((row, rowIndex) => {
       const tr = element('tr');
+      tr.setAttribute('role', 'row');
       columns.forEach(column => {
         const label = `${row.label}, ${column.label}`;
         const td = element('td');
+        td.setAttribute('role', 'cell');
         const slot = element('div', `comparison-slot${column.key === 'ours' ? ' is-ours' : ''}`);
         slot.dataset.example = String(rowIndex + 1);
         slot.dataset.method = column.key;

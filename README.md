@@ -15,7 +15,7 @@ Anonymous project page: https://anoymouscell.github.io/spectralweave/
 
 The page uses static HTML, CSS, and JavaScript. No build step or remote runtime dependency is required. For local preview, run `python -m http.server 8765` from this directory.
 
-The header and method retain their original responsive layout, with a maximum content width of 1100px and a prose width of 840px. Comparison tables use up to 1480px to accommodate all methods, with horizontal scrolling on smaller screens. The page applies no CSS zoom. Browser page zoom (such as 75% in the browser menu) is controlled by the browser, not the website; the page cannot force that setting on refresh. In Chrome, set the site's zoom in the browser menu to save it for subsequent visits and refreshes. See [Chrome's zoom settings](https://support.google.com/chrome/answer/96810?co=GENIE.Platform%3DDesktop&hl=en).
+The header, opening video, abstract, method, comparisons, and resources share one centered `.container`: a maximum width of 1280px, with 24px side margins (18px on small screens). Adjust `--content-width` and `--page-gutter` in `styles.css` to change the shared layout. Comparison media align with the container edges; gaps appear only between columns. Tables scroll horizontally on smaller screens. The page applies no CSS zoom. Browser page zoom (such as 75% in the browser menu) is controlled by the browser, not the website; the page cannot force that setting on refresh. In Chrome, set the site's zoom in the browser menu to save it for subsequent visits and refreshes. See [Chrome's zoom settings](https://support.google.com/chrome/answer/96810?co=GENIE.Platform%3DDesktop&hl=en).
 
 ## Adding materials
 

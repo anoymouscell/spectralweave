@@ -16,10 +16,10 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="vendor/morphany3d/fonts/regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="vendor/morphany3d/fonts/bold.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=comparison-sets-v14">
+  <link rel="stylesheet" href="styles.css?v=unified-container-v15">
   <script src="script.js?v=muted-autoplay-v11" defer></script>
   <script src="comparisons-data.js?v=comparison-sets-v14" defer></script>
-  <script src="comparisons.js?v=comparison-sets-v14" defer></script>
+  <script src="comparisons.js?v=unified-container-v15" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -70,7 +70,7 @@
     </section>
 
     <section class="abstract-section paper-section" id="abstract" aria-labelledby="abstract-title">
-      <div class="reading-width">
+      <div class="container">
         <h2 id="abstract-title">Abstract</h2>
         <div class="abstract-copy"><p>Native 4D mesh generation directly animates a supplied, unrigged mesh from a semantic action condition while preserving its native topology. We introduce <strong>SpectralWeave</strong>, to our knowledge, the first spectral generative framework for this challenging task across <em>independently</em> meshed identities. It models surface motion as trajectories of Laplacian coefficients, providing a fixed-size learning space and direct decoding on the supplied vertices without a learned mesh autoencoder. </p><p>The key difficulty is that independently computed bases assign different coordinate axes to corresponding deformations, making their coefficients incompatible. Bounded, invertible identity adapters constrained by pairwise functional maps align these coefficients while preserving each reconstruction subspace. This factors mesh-dependent coordinate variation out of the generative task, allowing action- and morphology-conditioned diffusion to model mesh trajectories under a consistent coordinate convention. </p><p>The target adapter and native basis decode generated trajectories into topology-preserving mesh sequences, while geometry-aware supervision and deterministic refinement preserve local surface structure. Experiments in separate animal and human domains demonstrate coherent generation on new identities without their motion data, while ablations show that spectral synchronization improves cross-identity generalization.</p></div>
       </div>
@@ -85,7 +85,7 @@
       </figure>
     </section>
 
-    <section class="paper-section results-section" id="results" aria-labelledby="results-title">
+    <section class="paper-section container results-section" id="results" aria-labelledby="results-title">
       <h2 id="results-title">Results</h2>
       <p class="section-intro">Video comparisons on unseen test identities and on 3D meshes generated from images.</p>
       <section class="comparison-section" id="test-comparisons" aria-labelledby="test-comparisons-title">
@@ -110,7 +110,7 @@
       </section>
     </section>
 
-    <section class="paper-section reading-width resources-section" id="resources" aria-labelledby="resources-title">
+    <section class="paper-section container resources-section" id="resources" aria-labelledby="resources-title">
       <h2 id="resources-title">Resources</h2>
       <p>The paper, research code, video and citation will be available here upon release.</p>
     </section>
